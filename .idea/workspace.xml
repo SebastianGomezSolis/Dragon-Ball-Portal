@@ -4,62 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ed876ae-bcf6-4c80-884a-501a44d16147" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/images/branding/header.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/images/branding/icon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/images/pages/contribuir.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/images/pages/goku.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/images/pages/inicio.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/images/pages/login.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/images/pages/mis-contribuciones.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/images/pages/pendientes.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/images/pages/personajes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/images/pages/sagas.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/images/personajes/freezer.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/images/personajes/gohan.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/images/personajes/goku.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/images/personajes/piccolo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/images/personajes/vegeta.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/AlertaMensaje.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/Banner.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/BuscadorEntidades.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/Cargando.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/DetailCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/DetalleEntidad.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/EntityList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/Footer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/GlobalBanner.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/Header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/ListaEntidades.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/LoadingBlock.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/Navbar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/SearchPanel.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/SectionTitle.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/AdminPendientesPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/CatalogoPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/CompararPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/ContribuirPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/EntityCatalogPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/HomePage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/InicioPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/LoginPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/MisContribucionesPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/PersonajesPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/RazasPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/SagasPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/services/api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/services/authService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/types/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/utils/formatters.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/index.tsx" afterDir="false" />
+    <list default="true" id="7ed876ae-bcf6-4c80-884a-501a44d16147" name="Changes" comment="Agregacion del backend y frontend">
+      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/dbp.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,12 +37,25 @@
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="3" />
+    <option name="cachedIndexableFilesCount" value="116" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/dragon-ball-portal-frontend" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SebastianGomezSolis&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SebastianGomezSolis/Dragon-Ball-Portal.git&quot;,
+    &quot;accountId&quot;: &quot;7598ec58-d170-4e0c-8c50-19b27b3ac17c&quot;
+  }
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -126,14 +86,14 @@
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Universidad/1-Ciclo-2026/Progra-4/Proyectos-Practicas/Proyectos-2026/Proyecto-Dragon-Ball-Portal/Dragon-Ball-Portal/dragon-ball-portal-frontend/src",
+    "last_opened_file_path": "C:/Universidad/1-Ciclo-2026/Progra-4/Proyectos-Practicas/Proyectos-2026/Proyecto-Dragon-Ball-Portal/Dragon-Ball-Portal/dragon-ball-portal-backend",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs.jest.jest_package": "C:/Universidad/1-Ciclo-2026/Progra-4/Proyectos-Practicas/Proyectos-2026/Proyecto-Dragon-Ball-Portal/Dragon-Ball-Portal/dragon-ball-portal-frontend/node_modules/react-scripts",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
     "npm.start.executor": "Run",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
+    "settings.editor.selected.configurable": "vcs.Git",
     "ts.external.directory.path": "C:\\Universidad\\1-Ciclo-2026\\Progra-4\\Proyectos-Practicas\\Proyectos-2026\\Proyecto-Dragon-Ball-Portal\\Dragon-Ball-Portal\\dragon-ball-portal-frontend\\node_modules\\typescript\\lib"
   }
 }]]></component>
@@ -202,12 +162,26 @@
       <option name="presentableId" value="Default" />
       <updated>1775619092771</updated>
       <workItem from="1775619092773" duration="24000" />
-      <workItem from="1778356758438" duration="1767000" />
+      <workItem from="1778356758438" duration="2266000" />
+      <workItem from="1778363187866" duration="375000" />
     </task>
+    <task id="LOCAL-00001" summary="Agregacion del backend y frontend">
+      <option name="closed" value="true" />
+      <created>1778358634620</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1778358634621</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Agregacion del backend y frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregacion del backend y frontend" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
