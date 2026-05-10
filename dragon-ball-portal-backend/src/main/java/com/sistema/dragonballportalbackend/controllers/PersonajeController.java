@@ -5,17 +5,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+// Controlador REST para manejar las operaciones relacionadas con los personajes.
+// Proporciona endpoints para listar y obtener detalles de personajes.
 @RestController
 @RequestMapping("/api/personajes")
 public class PersonajeController {
+     
+    // Servicio de modelo que proporciona acceso a los servicios de negocio.
+    // Inyectado automáticamente por Spring.
     @Autowired
     private ModeloDatos modeloDatos;
 
+    // Lista todos los personajes o filtra por nombre si se proporciona.
+    // @param nombre Parámetro opcional para filtrar personajes por nombre
+    // @return Lista de personajes que coinciden con el filtro o todos los publicados
     @GetMapping
     public ResponseEntity<?> listar(@RequestParam(required = false) String nombre) {
         return ResponseEntity.ok(modeloDatos.getPersonajeService().buscarPorNombre(nombre));
     }
 
+    // Obtiene los detalles de un personaje específico por su ID.
+    // @param id Identificador único del personaje
+    // @return Objeto personaje con los datos solicitados
     @GetMapping("/{id}")
     public ResponseEntity<?> detalle(@PathVariable Integer id) {
         return ResponseEntity.ok(modeloDatos.getPersonajeService().findById(id));
