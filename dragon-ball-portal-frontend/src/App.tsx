@@ -1,12 +1,9 @@
-// Importaciones necesarias para el componente principal de la aplicación
 import React, { useEffect, useState } from 'react';
 import './App.css';
-// Importación de componentes reutilizables
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Banner from './components/Banner';
 import AlertaMensaje from './components/AlertaMensaje';
-// Importación de páginas de la aplicación
 import InicioPage from './pages/InicioPage';
 import LoginPage from './pages/LoginPage';
 import PersonajesPage from './pages/PersonajesPage';
@@ -16,7 +13,6 @@ import ContribuirPage from './pages/ContribuirPage';
 import MisContribucionesPage from './pages/MisContribucionesPage';
 import AdminPendientesPage from './pages/AdminPendientesPage';
 import CompararPage from './pages/CompararPage';
-// Importación de servicios y tipos personalizados
 import { obtenerSesion, limpiarSesion } from './services/authService';
 import { MensajeGlobal, SesionUsuario } from './types';
 

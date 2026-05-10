@@ -120,6 +120,7 @@ function InicioPage(props: InicioPageProps) {
             {/* Sección de resumen de contenido publicado */}
             <section className="container pb-5">
                 <h2 className="fw-bold mb-4">Contenido publicado</h2>
+                <h6> Ultimos 5 agregados </h6>
                 {/* Muestra indicador de carga mientras obtiene los datos */}
                 {cargando ? (
                     <Cargando />
