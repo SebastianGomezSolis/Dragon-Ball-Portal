@@ -24,8 +24,8 @@ public class AuthController {
     private ModeloDatos modeloDatos;
 
     // Endpoint para iniciar sesión con credenciales.
-    // @param request Objeto con email y password para autenticación
-    // @return Respuesta con token JWT si es exitoso, error 401 si falla
+    // Parametro request: Objeto con email y password para autenticación
+    // Retorna la respuesta con token JWT si es exitoso, error 401 si falla
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody AuthRequest request) {
         LoginResponse respuesta = modeloDatos.getAuthService().login(request);
@@ -39,8 +39,8 @@ public class AuthController {
     }
 
     // Endpoint para registrar un nuevo usuario.
-    // @param usuario Objeto con los datos del usuario a registrar
-    // @return Mensaje de éxito o error de validación
+    // Parametro usuario: Objeto con los datos del usuario a registrar
+    // Retorna el mensaje de éxito o error de validación
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody Usuario usuario) {
         String error = modeloDatos.getUsuarioService().registrar(usuario);
@@ -52,7 +52,7 @@ public class AuthController {
 
     // Endpoint para cerrar la sesión actual.
     // Invalida el token JWT del usuario.
-    // @return Mensaje de confirmación
+    // Retorna el mensaje de confirmación
     @PostMapping("/logout")
     public ResponseEntity<?> logout() {
         modeloDatos.getAuthService().logout();

@@ -23,7 +23,7 @@ public class AdminController {
 
     // Endpoint para obtener todas las contribuciones pendientes de revisión.
     // Solo accesible por usuarios con rol de administrador.
-    // @return Lista de contribuciones pendientes o error de autorización
+    // Retorna la lista de contribuciones pendientes o error de autorización
     @GetMapping("/pendientes")
     public ResponseEntity<?> pendientes() {
         // Verifica si el usuario tiene permisos de administrador
@@ -35,9 +35,9 @@ public class AdminController {
     }
 
     // Endpoint para aprobar una contribución específica.
-    // @param id Identificador de la contribución a aprobar
-    // @param request Solicitud que contiene la observación del administrador
-    // @return Mensaje de éxito o error de validación/autorización
+    // Parametro id: Identificador de la contribución a aprobar
+    // Parametro request: Solicitud que contiene la observación del administrador
+    // Retorna el mensaje de éxito o error de validación/autorización
     @PostMapping("/contribuciones/{id}/aprobar")
     public ResponseEntity<?> aprobar(@PathVariable Integer id, @RequestBody DecisionRequest request) {
         // Verifica si el usuario tiene permisos de administrador
@@ -57,9 +57,9 @@ public class AdminController {
     }
 
     // Endpoint para rechazar una contribución específica.
-    // @param id Identificador de la contribución a rechazar
-    // @param request Solicitud que contiene la observación del administrador
-    // @return Mensaje de éxito o error de validación/autorización
+    // Parametro id: Identificador de la contribución a rechazar
+    // Parametro request: Solicitud que contiene la observación del administrador
+    // Retorna el mensaje de éxito o error de validación/autorización
     @PostMapping("/contribuciones/{id}/rechazar")
     public ResponseEntity<?> rechazar(@PathVariable Integer id, @RequestBody DecisionRequest request) {
         // Verifica si el usuario tiene permisos de administrador

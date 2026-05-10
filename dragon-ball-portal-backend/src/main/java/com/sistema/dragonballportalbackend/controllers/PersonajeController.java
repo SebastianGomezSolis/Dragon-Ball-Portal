@@ -17,16 +17,16 @@ public class PersonajeController {
     private ModeloDatos modeloDatos;
 
     // Lista todos los personajes o filtra por nombre si se proporciona.
-    // @param nombre Parámetro opcional para filtrar personajes por nombre
-    // @return Lista de personajes que coinciden con el filtro o todos los publicados
+    // Parametro nombre: Parámetro opcional para filtrar personajes por nombre
+    // Retorna la lista de personajes que coinciden con el filtro o todos los publicados
     @GetMapping
     public ResponseEntity<?> listar(@RequestParam(required = false) String nombre) {
         return ResponseEntity.ok(modeloDatos.getPersonajeService().buscarPorNombre(nombre));
     }
 
     // Obtiene los detalles de un personaje específico por su ID.
-    // @param id Identificador único del personaje
-    // @return Objeto personaje con los datos solicitados
+    // Parametro id: Identificador único del personaje
+    // Retorna el objeto personaje con los datos solicitados
     @GetMapping("/{id}")
     public ResponseEntity<?> detalle(@PathVariable Integer id) {
         return ResponseEntity.ok(modeloDatos.getPersonajeService().findById(id));

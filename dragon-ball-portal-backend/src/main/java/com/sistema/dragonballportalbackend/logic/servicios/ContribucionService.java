@@ -45,22 +45,17 @@ public class ContribucionService {
 
     // Recupera las contribuciones que están pendientes de revisión.
     // Ordenadas por fecha de creación (más antiguas primero) para facilitar revisión.
-    // @return Lista de contribuciones pendientes.
     public List<Contribucion> findPendientes() {
         return contribucionRepository.findByEstadoOrderByFechaCreacionAsc(EstadoContribucion.PENDIENTE);
     }
 
     // Recupera todas las contribuciones realizadas por un usuario específico.
     // Ordenadas por fecha de creación descendente (más recientes primero).
-    // @param usuarioId Identificador del usuario cuyas contribuciones se buscan.
-    // @return Lista de contribuciones del usuario.
     public List<Contribucion> findByUsuarioId(Integer usuarioId) {
         return contribucionRepository.findByUsuario_IdOrderByFechaCreacionDesc(usuarioId);
     }
 
     // Busca una contribución por su identificador único.
-    // @param id Clave primaria de la contribución.
-    // @return Contribucion encontrada o null.
     public Contribucion findById(Integer id) {
         return contribucionRepository.findById(id).orElse(null);
     }
@@ -68,8 +63,6 @@ public class ContribucionService {
     // Crea una nueva contribución en el sistema.
     // Valida que todos los campos requeridos estén presentes y que el usuario exista.
     // Las contribuciones nuevas se crean con estado PENDIENTE automáticamente.
-    // @param contribucion Datos de la contribución a crear.
-    // @return null si fue exitosa, mensaje de error en caso de validación fallida.
     public String crearContribucion(Contribucion contribucion) {
         if (contribucion == null) {
             return "La contribución es nula";
@@ -106,9 +99,6 @@ public class ContribucionService {
     // Aprueba una contribución pendiente creando la entidad correspondiente.
     // Dependiendo del tipo (PERSONAJE, SAGA o RAZA), crea la entidad adecuada.
     // Actualiza el estado a APROBADA y guarda la observación del administrador.
-    // @param id Identificador de la contribución a aprobar.
-    // @param observacionAdmin Comentario opcional del administrador.
-    // @return null si fue exitosa, mensaje de error si falló.
     public String aprobar(Integer id, String observacionAdmin) {
         Contribucion contribucion = findById(id);
 
@@ -134,9 +124,6 @@ public class ContribucionService {
 
     // Rechaza una contribución pendiente sin crear ninguna entidad.
     // Actualiza el estado a RECHAZADA y guarda la observación del administrador.
-    // @param id Identificador de la contribución a rechazar.
-    // @param observacionAdmin Comentario del administrador explicando el rechazo.
-    // @return null si fue exitosa, mensaje de error si falló.
     public String rechazar(Integer id, String observacionAdmin) {
         Contribucion contribucion = findById(id);
 
@@ -156,7 +143,6 @@ public class ContribucionService {
 
     // Método privado que crea una entidad Personaje a partir de la contribución aprobada.
     // Configura el personaje como publicado y con el autor de la contribución.
-    // @param contribucion Contribución aprobada que contiene los datos del personaje.
     private void aprobarComoPersonaje(Contribucion contribucion) {
         Personaje personaje = new Personaje();
         personaje.setNombre(contribucion.getTitulo());
@@ -168,7 +154,6 @@ public class ContribucionService {
 
     // Método privado que crea una entidad Saga a partir de la contribución aprobada.
     // Configura la saga como publicada y con el autor de la contribución.
-    // @param contribucion Contribución aprobada que contiene los datos de la saga.
     private void aprobarComoSaga(Contribucion contribucion) {
         Saga saga = new Saga();
         saga.setNombre(contribucion.getTitulo());
@@ -180,7 +165,6 @@ public class ContribucionService {
 
     // Método privado que crea una entidad Raza a partir de la contribución aprobada.
     // Configura la raza como publicada y con el autor de la contribución.
-    // @param contribucion Contribución aprobada que contiene los datos de la raza.
     private void aprobarComoRaza(Contribucion contribucion) {
         Raza raza = new Raza();
         raza.setNombre(contribucion.getTitulo());

@@ -22,8 +22,8 @@ public class ContribucionController {
     @Autowired private SesionUsuarioBean sesionUsuarioBean;
 
     // Endpoint para crear una nueva contribución.
-    // @request Objeto con los datos de la contribución a crear
-    // @return Mensaje de éxito o error de validación/autenticación
+    // @request: Objeto con los datos de la contribución a crear
+    // Retorna el mensaje de éxito o error de validación/autenticación
     @PostMapping
     public ResponseEntity<?> crear(@RequestBody ContribucionRequest request) {
         // Verifica si el usuario está autenticado antes de permitir la creación
@@ -54,7 +54,7 @@ public class ContribucionController {
     }
 
     // Endpoint para obtener todas las contribuciones del usuario autenticado.
-    // @return Lista de contribuciones del usuario o error de autenticación
+    // Retorna la lista de contribuciones del usuario o error de autenticación
     @GetMapping("/mias")
     public ResponseEntity<?> mias() {
         // Verifica si el usuario está autenticado antes de permitir el acceso

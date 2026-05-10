@@ -21,7 +21,7 @@ public class DataInitializer implements CommandLineRunner {
     @Autowired private UsuarioService usuarioService;
 
     // Método que se ejecuta después de que el contexto de Spring se inicializa.
-    // @param args Argumentos de la línea de comandos (no utilizados actualmente)
+    // Argumentos de la línea de comandos (no utilizados actualmente)
     @Override
     public void run(String... args) {
         // Verifica si ya existe un usuario con el username "admin"

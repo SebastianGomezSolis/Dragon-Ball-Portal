@@ -27,9 +27,6 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
     // Método principal del filtro que procesa cada petición HTTP.
     // Limpia la sesión anterior, extrae el token del header y actualiza el bean de sesión.
-    // @param request Objeto HttpServletRequest con los datos de la petición entrante.
-    // @param response Objeto HttpServletResponse para enviar respuestas al cliente.
-    // @param filterChain Cadena de filtros que continúa el procesamiento de la petición.
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         // Limpia cualquier sesión anterior antes de procesar la nueva petición.

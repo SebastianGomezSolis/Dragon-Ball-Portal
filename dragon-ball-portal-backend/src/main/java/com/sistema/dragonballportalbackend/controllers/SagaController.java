@@ -17,16 +17,16 @@ public class SagaController {
 
     // Obtiene todas las sagas o filtra por nombre según el parámetro de búsqueda.
     // Si no se proporciona nombre, retorna todas las sagas publicadas.
-    // @param nombre - Parámetro opcional para filtrar sagas por nombre (búsqueda parcial).
-    // @return Lista de sagas que coinciden con el filtro.
+    // Parametro nombre: Parámetro opcional para filtrar sagas por nombre (búsqueda parcial).
+    // Retorna la lista de sagas que coinciden con el filtro.
     @GetMapping
     public ResponseEntity<?> listar(@RequestParam(required = false) String nombre) {
         return ResponseEntity.ok(modeloDatos.getSagaService().buscarPorNombre(nombre));
     }
 
     // Obtiene los detalles de una saga específica usando su identificador único.
-    // @param id - Identificador único de la saga en la base de datos.
-    // @return Datos completos de la saga o null si no existe.
+    // Parametro id: Identificador único de la saga en la base de datos.
+    // Retorna los datos completos de la saga o null si no existe..
     @GetMapping("/{id}")
     public ResponseEntity<?> detalle(@PathVariable Integer id) {
         return ResponseEntity.ok(modeloDatos.getSagaService().findById(id));

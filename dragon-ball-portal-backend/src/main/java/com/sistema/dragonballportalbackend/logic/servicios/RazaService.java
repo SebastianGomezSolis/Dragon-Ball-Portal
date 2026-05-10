@@ -20,7 +20,6 @@ public class RazaService {
     private RazaRepository razaRepository;
 
     // Recupera todas las razas existentes en el sistema sin filtros.
-    // @return Lista completa de todas las raza almacenadas en la base de datos.
     public List<Raza> findAll() {
         List<Raza> lista = new ArrayList<>();
         razaRepository.findAll().forEach(lista::add);
@@ -29,14 +28,12 @@ public class RazaService {
 
     // Recupera únicamente las razas que han sido marcadas como publicadas.
     // Útil para mostrar solo contenido aprobado al público general.
-    // @return Lista de razas publicadas ordenadas alfabéticamente por nombre.
     public List<Raza> findAllPublicadas() {
         return razaRepository.findByPublicadoTrueOrderByNombreAsc();
     }
 
     // Busca una raza específica usando su identificador único.
     // @param id Identificador primario de la raza a buscar.
-    // @return La entidad Raza si existe, o null en caso de no encontrar coincidencias.
     public Raza findById(Integer id) {
         return razaRepository.findById(id).orElse(null);
     }
@@ -44,8 +41,6 @@ public class RazaService {
     // Busca razas cuyo nombre contenga el texto especificado (búsqueda parcial).
     // La búsqueda es insensitive a mayúsculas/minúsculas.
     // Si no se proporciona un nombre o está vacío, retorna todas las razas publicadas.
-    // @param nombre Texto a buscar en el nombre de la raza. Puede ser null o vacío.
-    // @return Lista de razas que coinciden con el criterio de búsqueda.
     public List<Raza> buscarPorNombre(String nombre) {
         if (nombre == null || nombre.isBlank()) {
             return findAllPublicadas();
@@ -56,8 +51,6 @@ public class RazaService {
     // Persiste o actualiza una raza en la base de datos.
     // Realiza validaciones de negocio antes de guardar: verifica que no sea nula
     // y que tenga un nombre válido. Por defecto, las nuevas razas no se publican.
-    // @param raza Entidad Raza a guardar o actualizar.
-    // @return null si la operación fue exitosa, o un mensaje de error describiendo la falla.
     public String guardar(Raza raza) {
         if (raza == null) {
             return "La raza es nula";

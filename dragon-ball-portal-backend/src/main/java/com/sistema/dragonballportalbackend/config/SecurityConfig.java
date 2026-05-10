@@ -52,7 +52,7 @@ public class SecurityConfig {
 
     // Configura la fuente de configuración CORS para la aplicación.
     // Define qué origins, methods y headers están permitidos para las peticiones CORS.
-    // @return Fuente de configuración CORS
+    // Retorna la fuente de configuración CORS
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();

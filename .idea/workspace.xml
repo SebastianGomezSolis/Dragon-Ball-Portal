@@ -4,9 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ed876ae-bcf6-4c80-884a-501a44d16147" name="Changes" comment="Agregacion del backend y frontend">
-      <change afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/dbp.sql" afterDir="false" />
+    <list default="true" id="7ed876ae-bcf6-4c80-884a-501a44d16147" name="Changes" comment="BD">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/config/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/config/DataInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/ContribucionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/ContribucionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/PersonajeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/PersonajeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/RazaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/RazaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/SagaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/SagaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/data/ContribucionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/data/ContribucionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/data/PersonajeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/data/PersonajeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/data/RazaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/data/RazaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/data/SagaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/data/SagaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/data/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/data/UsuarioRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/servicios/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/servicios/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/servicios/ContribucionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/servicios/ContribucionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/servicios/PasswordHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/servicios/PasswordHash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/servicios/PersonajeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/servicios/PersonajeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/servicios/RazaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/servicios/RazaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/servicios/SagaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/servicios/SagaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/servicios/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/servicios/UsuarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/security/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/security/JwtAuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/security/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/security/JwtService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +58,7 @@
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="116" />
+    <option name="cachedIndexableFilesCount" value="119" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -81,6 +102,7 @@
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "Spring Boot.DragonBallPortalBackendApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
@@ -93,12 +115,13 @@
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
     "npm.start.executor": "Run",
-    "settings.editor.selected.configurable": "vcs.Git",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "ts.external.directory.path": "C:\\Universidad\\1-Ciclo-2026\\Progra-4\\Proyectos-Practicas\\Proyectos-2026\\Proyecto-Dragon-Ball-Portal\\Dragon-Ball-Portal\\dragon-ball-portal-frontend\\node_modules\\typescript\\lib"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Universidad\1-Ciclo-2026\Progra-4\Proyectos-Practicas\Proyectos-2026\Proyecto-Dragon-Ball-Portal\Dragon-Ball-Portal\dragon-ball-portal-backend" />
       <recent name="C:\Universidad\1-Ciclo-2026\Progra-4\Proyectos-Practicas\Proyectos-2026\Proyecto-Dragon-Ball-Portal\Dragon-Ball-Portal\dragon-ball-portal-frontend\src" />
       <recent name="C:\Universidad\1-Ciclo-2026\Progra-4\Proyectos-Practicas\Proyectos-2026\Proyecto-Dragon-Ball-Portal\Dragon-Ball-Portal\dragon-ball-portal-frontend\public" />
       <recent name="C:\Universidad\1-Ciclo-2026\Progra-4\Proyectos-Practicas\Proyectos-2026\Proyecto-Dragon-Ball-Portal\Dragon-Ball-Portal\dragon-ball-portal-backend\src\main\java\com\sistema\dragonballportalbackend" />
@@ -163,7 +186,8 @@
       <updated>1775619092771</updated>
       <workItem from="1775619092773" duration="24000" />
       <workItem from="1778356758438" duration="2266000" />
-      <workItem from="1778363187866" duration="375000" />
+      <workItem from="1778363187866" duration="394000" />
+      <workItem from="1778373551976" duration="5629000" />
     </task>
     <task id="LOCAL-00001" summary="Agregacion del backend y frontend">
       <option name="closed" value="true" />
@@ -173,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778358634621</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="BD">
+      <option name="closed" value="true" />
+      <created>1778363574635</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1778363574635</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +213,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Agregacion del backend y frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregacion del backend y frontend" />
+    <MESSAGE value="BD" />
+    <option name="LAST_COMMIT_MESSAGE" value="BD" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

@@ -35,8 +35,6 @@ public class AuthService {
 
     // Procesa una solicitud de inicio de sesión verificando credenciales del usuario.
     // Si las credenciales son válidas, genera un token JWT y actualiza el estado de sesión.
-    // @param request Contiene username y password para autenticación.
-    // @return LoginResponse con datos del usuario y token JWT si es exitoso, null si falla.
     public LoginResponse login(AuthRequest request) {
         // Validación básica de campos requeridos en la solicitud
         if (request.getUsername() == null || request.getPassword() == null) {

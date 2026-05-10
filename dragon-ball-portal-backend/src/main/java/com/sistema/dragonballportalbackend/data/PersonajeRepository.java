@@ -13,7 +13,6 @@ public interface PersonajeRepository extends CrudRepository<Personaje, Integer> 
     // Obtiene todos los personajes publicados ordenados alfabéticamente por nombre.
     List<Personaje> findByPublicadoTrueOrderByNombreAsc();
     
-    // Busca personajes por nombre (coincidencia parcial, insensible a mayúsculas) 
-    // que estén publicados, ordenados alfabéticamente por nombre.
+    // Busca personajes por nombre (coincidencia parcial, insensible a mayúsculas) que estén publicados, ordenados alfabéticamente por nombre.
     List<Personaje> findByNombreContainingIgnoreCaseAndPublicadoTrueOrderByNombreAsc(String nombre);
 }

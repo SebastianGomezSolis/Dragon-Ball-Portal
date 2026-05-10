@@ -24,8 +24,8 @@ public class RazaController {
     }
 
     // Obtiene los detalles de una raza específica por su ID.
-    // @param id Identificador único de la raza
-    // @return Objeto raza con los datos solicitados
+    // Parametro id: Identificador único de la raza
+    // Retorna el objeto raza con los datos solicitados
     @GetMapping("/{id}")
     public ResponseEntity<?> detalle(@PathVariable Integer id) {
         return ResponseEntity.ok(modeloDatos.getRazaService().findById(id));
