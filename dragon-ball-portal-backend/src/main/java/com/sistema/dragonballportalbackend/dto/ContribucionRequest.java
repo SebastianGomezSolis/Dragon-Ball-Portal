@@ -8,12 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ContribucionRequest {
-    // Tipo de contribución (ej: teoría, fanart, fanfic, etc.)
     private String tipo;
-    
-    // Título de la contribución
     private String titulo;
-    
-    // Contenido HTML de la contribución
     private String contenidoHtml;
 }

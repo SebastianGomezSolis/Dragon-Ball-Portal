@@ -8,7 +8,5 @@ import lombok.Setter;
 @Getter
 @Setter
 public class DecisionRequest {
-    // Observación o comentario que el administrador agrega al tomar una decisión
-    // sobre una contribución (puede ser null o vacío)
     private String observacionAdmin;
 }

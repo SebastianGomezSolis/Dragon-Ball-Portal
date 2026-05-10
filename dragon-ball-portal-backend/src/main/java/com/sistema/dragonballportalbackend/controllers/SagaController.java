@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-// Controlador REST para manejar operaciones relacionadas con sagas de Dragon Ball.
+// Controlador para manejar operaciones relacionadas con sagas de Dragon Ball.
 // Proporciona endpoints públicos para consultar sagas y filtrar por nombre.
 @RestController
 @RequestMapping("/api/sagas")

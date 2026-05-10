@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 // Servicio de autenticación que maneja las operaciones de login y logout de usuarios.
 // Coordina la verificación de credenciales, generación de tokens JWT y gestión de sesiones.
-// acts as the main entry point for user authentication logic in the application.
 @Service
 public class AuthService {
     // Servicio de usuario utilizado para buscar y validar credenciales de usuarios.

@@ -10,9 +10,6 @@ import java.util.Optional;
 // Extiende CrudRepository para obtener métodos básicos y agrega consultas personalizadas.
 @Repository
 public interface UsuarioRepository extends CrudRepository<Usuario, Integer> {
-    // Busca un usuario por su nombre de usuario (username).
     Optional<Usuario> findByUsername(String username);
-    
-    // Verifica si existe un usuario con el nombre de usuario especificado.
     boolean existsByUsername(String username);
 }

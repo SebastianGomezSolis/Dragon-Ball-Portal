@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-// Controlador REST para operaciones administrativas.
+// Controlador para operaciones administrativas.
 // Proporciona endpoints para gestionar contribuciones pendientes y tomar decisiones.
 @RestController
 @RequestMapping("/api/admin")

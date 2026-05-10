@@ -8,9 +8,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AuthRequest {
-    // Nombre de usuario o email para autenticación
     private String username;
-    
-    // Contraseña para autenticación
     private String password;
 }

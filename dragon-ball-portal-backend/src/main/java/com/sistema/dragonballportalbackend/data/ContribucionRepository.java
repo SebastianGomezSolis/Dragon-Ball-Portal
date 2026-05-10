@@ -11,13 +11,7 @@ import java.util.List;
 // Extiende CrudRepository para obtener métodos básicos y agrega consultas personalizadas.
 @Repository
 public interface ContribucionRepository extends CrudRepository<Contribucion, Integer> {
-    // Busca todas las contribuciones con un estado específico, ordenadas por fecha de creación ascendente.
     List<Contribucion> findByEstadoOrderByFechaCreacionAsc(EstadoContribucion estado);
-    
-    // Busca todas las contribuciones de un usuario específico, ordenadas por fecha de creación descendente.
-    // Las más recientes aparecen primero.
     List<Contribucion> findByUsuario_IdOrderByFechaCreacionDesc(Integer usuarioId);
-    
-    // Busca contribuciones de un tipo y estado específicos.
     List<Contribucion> findByTipoAndEstado(String tipo, EstadoContribucion estado);
 }
