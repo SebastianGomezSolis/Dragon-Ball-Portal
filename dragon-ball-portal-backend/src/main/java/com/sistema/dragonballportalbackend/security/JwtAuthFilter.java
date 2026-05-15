@@ -37,9 +37,9 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         String authHeader = request.getHeader("Authorization");
 
         // Verifica si el header existe y comienza con "Bearer " (formato estándar JWT).
-        if (authHeader != null && authHeader.startsWith("Bearer ")) {
-            // Extrae el token JWT eliminando el prefijo "Bearer ".
-            String token = authHeader.substring(7);
+        String PREFIJO_BEARER = "Bearer ";
+        if (authHeader != null && authHeader.startsWith(PREFIJO_BEARER)) {
+            String token = authHeader.substring(PREFIJO_BEARER.length());
             
             // Valida el token y si es correcto, extrae los datos del usuario.
             if (jwtService.esValido(token)) {

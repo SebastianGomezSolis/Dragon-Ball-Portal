@@ -13,5 +13,4 @@ import java.util.List;
 public interface ContribucionRepository extends CrudRepository<Contribucion, Integer> {
     List<Contribucion> findByEstadoOrderByFechaCreacionAsc(EstadoContribucion estado);
     List<Contribucion> findByUsuario_IdOrderByFechaCreacionDesc(Integer usuarioId);
-    List<Contribucion> findByTipoAndEstado(String tipo, EstadoContribucion estado);
 }

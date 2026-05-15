@@ -2,8 +2,8 @@ package com.sistema.dragonballportalbackend.logic.servicios;
 
 import com.sistema.dragonballportalbackend.data.ContribucionRepository;
 import com.sistema.dragonballportalbackend.logic.model.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -14,26 +14,24 @@ import java.util.List;
 // Cada contribución puede crear una entidad (Personaje, Saga o Raza) tras ser aprobada.
 @Service
 public class ContribucionService {
-    // Repositorio para operaciones CRUD sobre Contribucion.
-    // Permite consultar y persistir contribuciones en la base de datos.
-    @Autowired
-    private ContribucionRepository contribucionRepository;
 
-    // Servicio de usuario para verificar la existencia del autor de una contribución.
-    @Autowired
-    private UsuarioService usuarioService;
+    private final ContribucionRepository contribucionRepository;
+    private final UsuarioService usuarioService;
+    private final PersonajeService personajeService;
+    private final SagaService sagaService;
+    private final RazaService razaService;
 
-    // Servicio de personaje para crear entidades Personaje al aprobar contribuciones.
-    @Autowired
-    private PersonajeService personajeService;
-
-    // Servicio de saga para crear entidades Saga al aprobar contribuciones.
-    @Autowired
-    private SagaService sagaService;
-
-    // Servicio de raza para crear entidades Raza al aprobar contribuciones.
-    @Autowired
-    private RazaService razaService;
+    public ContribucionService(ContribucionRepository contribucionRepository,
+                               UsuarioService usuarioService,
+                               PersonajeService personajeService,
+                               SagaService sagaService,
+                               RazaService razaService) {
+        this.contribucionRepository = contribucionRepository;
+        this.usuarioService = usuarioService;
+        this.personajeService = personajeService;
+        this.sagaService = sagaService;
+        this.razaService = razaService;
+    }
 
     // Recupera todas las contribuciones del sistema sin filtros.
     // @return Lista completa de contribuciones.
@@ -99,6 +97,7 @@ public class ContribucionService {
     // Aprueba una contribución pendiente creando la entidad correspondiente.
     // Dependiendo del tipo (PERSONAJE, SAGA o RAZA), crea la entidad adecuada.
     // Actualiza el estado a APROBADA y guarda la observación del administrador.
+    @Transactional
     public String aprobar(Integer id, String observacionAdmin) {
         Contribucion contribucion = findById(id);
 
@@ -109,11 +108,16 @@ public class ContribucionService {
             return "La contribución ya fue procesada";
         }
 
+        String error = null;
         switch (contribucion.getTipo().toUpperCase()) {
-            case "PERSONAJE" -> aprobarComoPersonaje(contribucion);
-            case "SAGA" -> aprobarComoSaga(contribucion);
-            case "RAZA" -> aprobarComoRaza(contribucion);
+            case "PERSONAJE" -> error = aprobarComoPersonaje(contribucion);
+            case "SAGA" -> error = aprobarComoSaga(contribucion);
+            case "RAZA" -> error = aprobarComoRaza(contribucion);
             default -> { return "Tipo de contribución inválido"; }
+        }
+
+        if (error != null) {
+            return error;
         }
 
         contribucion.setEstado(EstadoContribucion.APROBADA);
@@ -143,34 +147,34 @@ public class ContribucionService {
 
     // Método privado que crea una entidad Personaje a partir de la contribución aprobada.
     // Configura el personaje como publicado y con el autor de la contribución.
-    private void aprobarComoPersonaje(Contribucion contribucion) {
+    private String aprobarComoPersonaje(Contribucion contribucion) {
         Personaje personaje = new Personaje();
         personaje.setNombre(contribucion.getTitulo());
         personaje.setContenidoHtml(contribucion.getContenidoHtml());
         personaje.setPublicado(true);
         personaje.setAutor(contribucion.getUsuario());
-        personajeService.guardar(personaje);
+        return personajeService.guardar(personaje);
     }
 
     // Método privado que crea una entidad Saga a partir de la contribución aprobada.
     // Configura la saga como publicada y con el autor de la contribución.
-    private void aprobarComoSaga(Contribucion contribucion) {
+    private String aprobarComoSaga(Contribucion contribucion) {
         Saga saga = new Saga();
         saga.setNombre(contribucion.getTitulo());
         saga.setContenidoHtml(contribucion.getContenidoHtml());
         saga.setPublicado(true);
         saga.setAutor(contribucion.getUsuario());
-        sagaService.guardar(saga);
+        return sagaService.guardar(saga);
     }
 
     // Método privado que crea una entidad Raza a partir de la contribución aprobada.
     // Configura la raza como publicada y con el autor de la contribución.
-    private void aprobarComoRaza(Contribucion contribucion) {
+    private String aprobarComoRaza(Contribucion contribucion) {
         Raza raza = new Raza();
         raza.setNombre(contribucion.getTitulo());
         raza.setContenidoHtml(contribucion.getContenidoHtml());
         raza.setPublicado(true);
         raza.setAutor(contribucion.getUsuario());
-        razaService.guardar(raza);
+        return razaService.guardar(raza);
     }
 }

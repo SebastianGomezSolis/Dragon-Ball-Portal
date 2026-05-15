@@ -18,7 +18,15 @@ public class Personaje {
     @Column(nullable = false, length = 100)
     private String nombre;
 
-    @Lob
+    @Column(length = 100)
+    private String raza;
+
+    @Column(length = 100)
+    private String saga;
+
+    @Column(name = "imagen_url", length = 255)
+    private String imagenUrl;
+
     @Column(name = "contenido_html", columnDefinition = "TEXT")
     private String contenidoHtml;
 

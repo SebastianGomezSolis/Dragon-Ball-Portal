@@ -73,6 +73,12 @@ public class JwtService {
 
     // Extrae el rol del usuario del token JWT.
     public Rol obtenerRol(String token) {
-        return Rol.valueOf(parsearClaims(token).get("rol", String.class));
+        String rolStr = parsearClaims(token).get("rol", String.class);
+        if (rolStr == null) return Rol.USER;
+        try {
+            return Rol.valueOf(rolStr);
+        } catch (IllegalArgumentException e) {
+            return Rol.USER;
+        }
     }
 }

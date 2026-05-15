@@ -25,9 +25,7 @@ public class UsuarioService {
 
     // Recupera todos los usuarios registrados en el sistema.
     public List<Usuario> findAll() {
-        List<Usuario> lista = new ArrayList<>();
-        usuarioRepository.findAll().forEach(lista::add);
-        return lista;
+        return new ArrayList<>((List<Usuario>) usuarioRepository.findAll());
     }
 
     // Busca un usuario por su identificador único.
@@ -76,32 +74,5 @@ public class UsuarioService {
     public void guardar(Usuario usuario) {
         usuario.setPassword(passwordHash.hash(usuario.getPassword()));
         usuarioRepository.save(usuario);
-    }
-
-    // Actualiza los datos de un usuario existente.
-    // Valida que el usuario exista y permite actualizar la contraseña solo si se proporciona una nueva.
-    // Si no se proporciona contraseña, se mantiene la existente.
-    public String actualizar(Usuario usuario) {
-        if (usuario == null) {
-            return "El usuario es nulo";
-        }
-
-        if (usuario.getId() == null) {
-            return "El id es requerido";
-        }
-
-        Usuario existente = findById(usuario.getId());
-        if (existente == null) {
-            return "El usuario no existe";
-        }
-
-        if (usuario.getPassword() != null && !usuario.getPassword().isBlank()) {
-            usuario.setPassword(passwordHash.hash(usuario.getPassword()));
-        } else {
-            usuario.setPassword(existente.getPassword());
-        }
-
-        usuarioRepository.save(usuario);
-        return null;
     }
 }

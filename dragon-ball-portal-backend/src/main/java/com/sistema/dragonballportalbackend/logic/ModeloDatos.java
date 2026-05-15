@@ -1,6 +1,11 @@
 package com.sistema.dragonballportalbackend.logic;
 
-import com.sistema.dragonballportalbackend.logic.servicios.*;
+import com.sistema.dragonballportalbackend.logic.servicios.AuthService;
+import com.sistema.dragonballportalbackend.logic.servicios.ContribucionService;
+import com.sistema.dragonballportalbackend.logic.servicios.PersonajeService;
+import com.sistema.dragonballportalbackend.logic.servicios.RazaService;
+import com.sistema.dragonballportalbackend.logic.servicios.SagaService;
+import com.sistema.dragonballportalbackend.logic.servicios.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -19,5 +24,4 @@ public class ModeloDatos {
     public RazaService getRazaService() { return razaService; }
     public SagaService getSagaService() { return sagaService; }
     public UsuarioService getUsuarioService() { return usuarioService; }
-
 }

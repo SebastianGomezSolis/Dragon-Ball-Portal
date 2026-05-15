@@ -141,9 +141,9 @@ function ContribuirPage(props: ContribuirPageProps) {
                             </p>
 
                             {/* Formulario con campos de tipo, título y contenido */}
-                            <form className="row g-3" onSubmit={handleEnviar}>
+                            <form onSubmit={handleEnviar}>
                                 {/* Selector de tipo de contribución */}
-                                <div className="col-md-4">
+                                <div className="mb-3">
                                     <label className="form-label">Tipo</label>
                                     <select className="form-select"
                                             value={tipo}
@@ -155,7 +155,7 @@ function ContribuirPage(props: ContribuirPageProps) {
                                 </div>
 
                                 {/* Campo de título */}
-                                <div className="col-md-8">
+                                <div className="mb-3">
                                     <label className="form-label">Título</label>
                                     <input
                                         type="text"
@@ -168,7 +168,7 @@ function ContribuirPage(props: ContribuirPageProps) {
                                 </div>
 
                                 {/* Campo del editor de contenido enriquecido */}
-                                <div className="col-12">
+                                <div className="mb-3">
                                     <label className="form-label">Contenido</label>
                                     {/* Muestra el editor Quill si está listo, o mensaje de carga */}
                                     {quillListo ? (
@@ -182,13 +182,11 @@ function ContribuirPage(props: ContribuirPageProps) {
                                 </div>
 
                                 {/* Botón de envío con indicador de carga */}
-                                <div className="col-12 d-grid mt-2">
-                                    <button type="submit"
-                                            className="btn btn-warning fw-semibold"
-                                            disabled={cargando}>
-                                        {cargando ? 'Enviando...' : 'Guardar contribución'}
-                                    </button>
-                                </div>
+                                <button type="submit"
+                                        className="btn btn-warning fw-semibold w-100"
+                                        disabled={cargando}>
+                                    {cargando ? 'Enviando...' : 'Guardar contribución'}
+                                </button>
                             </form>
                         </div>
                     </div>

@@ -1,13 +1,13 @@
 package com.sistema.dragonballportalbackend.logic.model;
 
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.annotation.SessionScope;
+import org.springframework.web.context.annotation.RequestScope;
 
-// Bean de sesión que mantiene el estado del usuario autenticado durante toda la sesión HTTP.
-// Anotado con @SessionScope para que persista mientras dure la sesión del usuario.
-// Almacena información del usuario actual para verificar autenticación y permisos en cualquier momento.
+// Bean de request que mantiene el estado del usuario autenticado durante una petición HTTP.
+// Anotado con @RequestScope porque la API usa STATELESS sessions (JWT), no sesiones HTTP.
+// El filtro JWT limpia y repuebla este bean en cada request.
 @Component
-@SessionScope
+@RequestScope
 public class SesionUsuarioBean {
     private Integer id;
     private String username;
