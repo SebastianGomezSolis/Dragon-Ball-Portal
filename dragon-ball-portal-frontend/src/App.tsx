@@ -1,3 +1,5 @@
+// Componente principal de la aplicación React.
+// Maneja la navegación por hash, el estado global de sesión y los mensajes al usuario.
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
@@ -16,41 +18,41 @@ import CompararPage from './pages/CompararPage';
 import { obtenerSesion, limpiarSesion } from './services/authService';
 import { MensajeGlobal, SesionUsuario } from './types';
 
-// Función auxiliar para obtener la ruta actual desde el hash de la URL
-// @returns {string} La ruta actual formateada correctamente
+// Función auxiliar que extrae la ruta actual desde el hash de la URL.
+// Convierte '#/personajes' en '/personajes' para facilitar el enrutamiento.
+// @returns La ruta actual formateada (ej: '/personajes')
 function obtenerRuta(): string {
     const hash = window.location.hash || '#/';
     const ruta = hash.replace('#', '');
     return ruta.startsWith('/') ? ruta : `/${ruta}`;
 }
 
-// Componente principal de la aplicación React
-// Maneja el estado global de la aplicación (ruta, sesión, mensajes)
-// y renderiza las diferentes páginas según la ruta actual
+// Componente principal que engloba toda la aplicación.
+// Contiene el layout general (navbar, banner, contenido, footer)
+// y gestiona los estados globales de ruta, sesión y mensajes.
 function App() {
-    // Estado que almacena la ruta actual de la aplicación
+    // Estado que almacena la ruta actual para saber qué página renderizar
     const [ruta, setRuta] = useState<string>(obtenerRuta);
-    // Estado que almacena la información de la sesión del usuario actual
+    // Estado que guarda la información de sesión del usuario autenticado (null si no hay sesión)
     const [sesion, setSesion] = useState<SesionUsuario | null>(obtenerSesion);
-    // Estado que almacena mensajes globales para mostrar al usuario (éxito, error, etc.)
+    // Estado para mensajes globales (alertas de éxito, error, información)
     const [mensaje, setMensaje] = useState<MensajeGlobal | null>(null);
 
-    // Efecto que se ejecuta al montar el componente para escuchar cambios en el hash de la URL
-    // Actualiza el estado de la ruta cuando cambia el hash (navegación)
+    // Efecto que escucha cambios en el hash de la URL para actualizar la navegación.
+    // Se ejecuta al montar el componente y se limpia al desmontar.
     useEffect(() => {
         const handler = () => setRuta(obtenerRuta());
         window.addEventListener('hashchange', handler);
         return () => window.removeEventListener('hashchange', handler);
     }, []);
 
-    // Función para navegar a una ruta específica cambiando el hash de la URL
-    // @param destino {string} La ruta a la que se quiere navegar
+    // Función para navegar a una ruta específica cambiando el hash de la URL.
+    // @param destino - Ruta a la que navegar (ej: '/personajes')
     function navegar(destino: string) {
         window.location.hash = destino;
     }
 
-    // Función para cerrar la sesión del usuario actual
-    // Limpia los datos de sesión, actualiza el estado y muestra un mensaje de éxito
+    // Maneja el cierre de sesión: limpia los datos, actualiza el estado y redirige al inicio.
     function handleLogout() {
         limpiarSesion();
         setSesion(null);
@@ -58,18 +60,16 @@ function App() {
         navegar('/');
     }
 
-    // Función que renderiza la página correspondiente según la ruta actual
-    // @returns {JSX.Element} El componente de página a renderizar
+    // Renderiza el componente de página correspondiente según la ruta actual.
+    // Cada página recibe los props necesarios (sesión, navegación, mensajes).
+    // @returns El componente JSX de la página activa
     function renderPagina() {
         switch (ruta) {
             case '/login':
                 return (
                     <LoginPage
-                        // Callback para actualizar el estado de sesión cuando el usuario inicia sesión
                         onSesion={setSesion}
-                        // Callback para navegar a otras páginas
                         onNavegar={navegar}
-                        // Callback para mostrar mensajes globales
                         onMensaje={setMensaje}
                     />
                 );
@@ -84,70 +84,59 @@ function App() {
             case '/contribuir':
                 return (
                     <ContribuirPage
-                        // Información de la sesión actual para verificar permisos
                         sesion={sesion}
-                        // Callback para navegar a otras páginas
                         onNavegar={navegar}
-                        // Callback para mostrar mensajes globales
                         onMensaje={setMensaje}
                     />
                 );
             case '/mis-contribuciones':
                 return (
                     <MisContribucionesPage
-                        // Información de la sesión actual para filtrar contribuciones del usuario
                         sesion={sesion}
-                        // Callback para navegar a otras páginas
                         onNavegar={navegar}
-                        // Callback para mostrar mensajes globales
                         onMensaje={setMensaje}
                     />
                 );
             case '/admin/pendientes':
                 return (
                     <AdminPendientesPage
-                        // Información de la sesión actual para verificar permisos de administrador
                         sesion={sesion}
-                        // Callback para navegar a otras páginas
                         onNavegar={navegar}
-                        // Callback para mostrar mensajes globales
                         onMensaje={setMensaje}
                     />
                 );
             default:
                 return (
                     <InicioPage
-                        // Callback para navegar a otras páginas
                         onNavegar={navegar}
-                        // Callback para mostrar mensajes globales
                         onMensaje={setMensaje}
                     />
                 );
         }
     }
 
-    // Renderiza el componente principal de la aplicación
+    // Renderiza el layout completo de la aplicación con sus secciones principales
     return (
         <div className="d-flex flex-column min-vh-100 bg-body-tertiary">
-            {/* Barra de navegación que muestra enlaces según el estado de sesión */}
+            {/* Barra de navegación superior con enlaces según el estado de sesión */}
             <Navbar
                 sesion={sesion}
                 onNavegar={navegar}
                 onLogout={handleLogout}
             />
 
-            {/* Banner que muestra el título de la página actual */}
+            {/* Banner hero que muestra el título y descripción de la página actual */}
             <Banner ruta={ruta} />
 
-            {/* Componente para mostrar mensajes globales (alertas) */}
+            {/* Componente de alertas para mostrar mensajes al usuario */}
             <AlertaMensaje mensaje={mensaje} onCerrar={() => setMensaje(null)} />
 
-            {/* Contenido principal donde se renderizan las páginas */}
+            {/* Contenido principal donde se renderiza la página activa */}
             <main className="flex-grow-1">
                 {renderPagina()}
             </main>
 
-            {/* Pie de página de la aplicación */}
+            {/* Pie de página con información del portal */}
             <Footer />
         </div>
     );

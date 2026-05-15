@@ -1,37 +1,45 @@
+// Servicio de autenticación que maneja el almacenamiento local de la sesión del usuario.
+// Utiliza sessionStorage para persistir los datos de sesión durante la navegación.
 import { SesionUsuario } from '../types';
 
-// Clave utilizada para almacenar los datos de sesión en sessionStorage
+// Clave utilizada para guardar los datos de sesión en sessionStorage
 const CLAVE = 'dbp.sesion';
 
-// Obtiene los datos de la sesión actual desde sessionStorage
+// Lee y devuelve los datos de la sesión actual desde sessionStorage.
+// Si el JSON está corrupto, lo elimina y retorna null.
+// @returns SesionUsuario si hay sesión válida, null en caso contrario
 export function obtenerSesion(): SesionUsuario | null {
     // Obtiene el valor almacenado como texto plano
     const raw = sessionStorage.getItem(CLAVE);
     if (!raw) return null;
+
     try {
-        // Intenta parsear el JSON y devolverlo tipado como SesionUsuario
+        // Intenta parsear el JSON y devolverlo tipado
         return JSON.parse(raw) as SesionUsuario;
     } catch {
-        // Si hay error al parsear, elimina la sesión corrupta y devuelve null
+        // Si el JSON está corrupto, elimina la sesión dañada y devuelve null
         sessionStorage.removeItem(CLAVE);
         return null;
     }
 }
 
-// Guarda los datos de sesión en sessionStorage
+// Guarda los datos de sesión en sessionStorage para persistir la autenticación.
+// @param datos - Objeto con la información de sesión del usuario
 export function guardarSesion(datos: SesionUsuario): void {
-    // Convierte el objeto a JSON y lo almacena en sessionStorage
+    // Convierte el objeto a JSON y lo almacena
     sessionStorage.setItem(CLAVE, JSON.stringify(datos));
 }
 
-// Elimina los datos de sesión de sessionStorage (cierra sesión)
+// Elimina los datos de sesión de sessionStorage, cerrando efectivamente la sesión.
 export function limpiarSesion(): void {
-    // Remueve completamente la sesión de almacenamiento
+    // Remueve la entrada completa del almacenamiento
     sessionStorage.removeItem(CLAVE);
 }
 
-// Obtiene el token JWT de la sesión actual
+// Devuelve únicamente el token JWT de la sesión actual, o null si no hay sesión activa.
+// Utilizado por api.ts para agregar el header de autorización en cada solicitud.
+// @returns Token JWT o null
 export function obtenerToken(): string | null {
-    // Obtiene la sesión y devuelve su token si existe, de lo contrario null
+    // Obtiene la sesión y extrae solo el token
     return obtenerSesion()?.token ?? null;
 }
