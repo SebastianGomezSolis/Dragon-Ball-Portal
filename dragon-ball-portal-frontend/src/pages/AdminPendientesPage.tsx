@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Cargando from '../Componentes/Cargando';
+import Cargando from '../components/Cargando';
 import { obtenerToken } from '../services/authService';
 import { formatFecha } from '../utils/formatters';
 

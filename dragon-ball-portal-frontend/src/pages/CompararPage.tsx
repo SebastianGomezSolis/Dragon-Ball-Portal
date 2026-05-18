@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Cargando from '../Componentes/Cargando';
+import Cargando from '../components/Cargando';
 
 const BASE = 'http://localhost:8080/api';
 

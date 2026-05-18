@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import BuscadorEntidades from '../Componentes/BuscadorEntidades';
-import Cargando from '../Componentes/Cargando';
-import DetalleEntidad from '../Componentes/DetalleEntidad';
-import ListaEntidades from '../Componentes/ListaEntidades';
+import BuscadorEntidades from '../components/BuscadorEntidades';
+import Cargando from '../components/Cargando';
+import DetalleEntidad from '../components/DetalleEntidad';
+import ListaEntidades from '../components/ListaEntidades';
 
 interface Item {
     id: number;

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Navbar from './Componentes/Navbar';
-import Footer from './Componentes/Footer';
-import Banner from './Componentes/Banner';
-import AlertaMensaje from './Componentes/AlertaMensaje';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Banner from './components/Banner';
+import AlertaMensaje from './components/AlertaMensaje';
 import InicioPage from './pages/InicioPage';
 import LoginPage from './pages/LoginPage';
 import PersonajesPage from './pages/PersonajesPage';
