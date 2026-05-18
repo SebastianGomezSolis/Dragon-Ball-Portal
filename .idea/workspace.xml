@@ -6,31 +6,42 @@
   <component name="ChangeListManager">
     <list default="true" id="7ed876ae-bcf6-4c80-884a-501a44d16147" name="Changes" comment="Cambios comentarios">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/PersonajeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/PersonajeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/RazaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/RazaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/SagaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/SagaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/data/ContribucionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/data/ContribucionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/data/PersonajeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/data/PersonajeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/data/RazaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/data/RazaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/data/SagaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/data/SagaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/data/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/data/UsuarioRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/dto/AuthRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/dto/AuthRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/dto/ContribucionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/dto/ContribucionRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/dto/DecisionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/dto/DecisionRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/dto/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/dto/LoginResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/ModeloDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/ModeloDatos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/model/Contribucion.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/model/Contribucion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/model/EstadoContribucion.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/model/EstadoContribucion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/model/Personaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/model/Personaje.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/model/Raza.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/model/Raza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/model/Rol.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/model/Rol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/model/Saga.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/model/Saga.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/model/SesionUsuarioBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/model/SesionUsuarioBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/model/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/servicios/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/servicios/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/dto/RegisterRequest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/AlertaMensaje.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/Banner.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/BuscadorEntidades.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/Cargando.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/DetailCard.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/DetalleEntidad.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/EntityList.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/Footer.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/GlobalBanner.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/ListaEntidades.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/LoadingBlock.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/Navbar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/SearchPanel.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/SectionTitle.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/AdminPendientesPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/AdminPendientesPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/CatalogoPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/CatalogoPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/CompararPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/CompararPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/ContribuirPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/ContribuirPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/EntityCatalogPage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/HomePage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/InicioPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/InicioPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/LoginPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/MisContribucionesPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/MisContribucionesPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/PersonajesPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/PersonajesPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/RazasPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/RazasPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/SagasPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/SagasPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/services/api.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/services/authService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/services/authService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/types/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/utils/formatters.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/utils/formatters.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,8 +72,15 @@
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="127" />
+    <option name="cachedIndexableFilesCount" value="126" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,6 +102,65 @@
     <commands />
     <urls />
   </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0" />
+      <entry key="S60" value="1.0" />
+      <entry key="M2" value="1.0" />
+      <entry key="M5" value="1.0" />
+      <entry key="M10" value="1.0" />
+      <entry key="M15" value="1.0" />
+      <entry key="M30" value="1.0" />
+      <entry key="H1" value="1.0" />
+      <entry key="H2" value="1.0" />
+      <entry key="H4" value="1.0" />
+      <entry key="D1" value="1.0" />
+      <entry key="W1" value="1.0" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="7.059864403718795E-5" />
+      <entry key="MS500" value="0.1478288750305178" />
+      <entry key="S2" value="0.6200687121743583" />
+      <entry key="S5" value="0.8259921638269825" />
+      <entry key="S10" value="0.9088411103306135" />
+      <entry key="S30" value="0.9686405693174017" />
+      <entry key="S60" value="0.9841953918391417" />
+      <entry key="M2" value="0.9920662235149132" />
+      <entry key="M5" value="0.9968189039021158" />
+      <entry key="M10" value="0.9984081850135824" />
+      <entry key="M15" value="0.9989385082680253" />
+      <entry key="M30" value="0.9994691132136228" />
+      <entry key="H1" value="0.9997345213673592" />
+      <entry key="H2" value="0.9998672518726469" />
+      <entry key="H4" value="0.9999336237334191" />
+      <entry key="D1" value="0.9999889369829318" />
+      <entry key="W1" value="0.9999984195614969" />
+    </decayedShown>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4,
   &quot;fromUser&quot;: false
@@ -95,6 +172,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;JavaScript Debug.Debug Application.executor&quot;: &quot;Run&quot;,
     &quot;Jest.renders learn react link.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
@@ -117,6 +195,8 @@
     &quot;nodejs.jest.jest_package&quot;: &quot;C:/Universidad/1-Ciclo-2026/Progra-4/Proyectos-Practicas/Proyectos-2026/Proyecto-Dragon-Ball-Portal/Dragon-Ball-Portal/dragon-ball-portal-frontend/node_modules/react-scripts&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.iniciar.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start (1).executor&quot;: &quot;Run&quot;,
     &quot;npm.start.executor&quot;: &quot;Run&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Universidad\\1-Ciclo-2026\\Progra-4\\Proyectos-Practicas\\Proyectos-2026\\Proyecto-Dragon-Ball-Portal\\Dragon-Ball-Portal\\dragon-ball-portal-frontend\\node_modules\\typescript\\lib&quot;
@@ -135,7 +215,7 @@
       <recent name="C:\Universidad\1-Ciclo-2026\Progra-4\Proyectos-Practicas\Proyectos-2026\Proyecto-Dragon-Ball-Portal\Dragon-Ball-Portal\dragon-ball-portal-backend\src\main\java\com\sistema\dragonballportalbackend" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.iniciar">
     <configuration name="renders learn react link" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/dragon-ball-portal-frontend/node_modules/react-scripts" />
@@ -165,9 +245,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+    <configuration name="iniciar" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/dragon-ball-portal-frontend/package.json" />
-      <command value="start" />
+      <command value="run" />
+      <scripts>
+        <script value="iniciar" />
+      </scripts>
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
@@ -175,15 +258,24 @@
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
       <item itemvalue="Jest.renders learn react link" />
-      <item itemvalue="npm.start" />
+      <item itemvalue="npm.iniciar" />
       <item itemvalue="Spring Boot.DragonBallPortalBackendApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.iniciar" />
         <item itemvalue="Spring Boot.DragonBallPortalBackendApplication" />
         <item itemvalue="Jest.renders learn react link" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -199,7 +291,27 @@
       <workItem from="1778388198001" duration="305000" />
       <workItem from="1778388937601" duration="6000" />
       <workItem from="1778389122705" duration="95000" />
-      <workItem from="1778450983087" duration="842000" />
+      <workItem from="1778450983087" duration="3347000" />
+      <workItem from="1778461435655" duration="372000" />
+      <workItem from="1778461926509" duration="81000" />
+      <workItem from="1778462034387" duration="3774000" />
+      <workItem from="1778526431963" duration="8000" />
+      <workItem from="1778614251704" duration="1923000" />
+      <workItem from="1778631219427" duration="244000" />
+      <workItem from="1778631879659" duration="157000" />
+      <workItem from="1778632817524" duration="185000" />
+      <workItem from="1778643765454" duration="53000" />
+      <workItem from="1778800512632" duration="1951000" />
+      <workItem from="1778820596434" duration="2409000" />
+      <workItem from="1778894535786" duration="5000" />
+      <workItem from="1778898032140" duration="1429000" />
+      <workItem from="1778909964559" duration="3512000" />
+      <workItem from="1778962512576" duration="1776000" />
+      <workItem from="1778964941868" duration="4078000" />
+      <workItem from="1779053900635" duration="137000" />
+      <workItem from="1779063652496" duration="2718000" />
+      <workItem from="1779132438963" duration="60000" />
+      <workItem from="1779140307357" duration="573000" />
     </task>
     <task id="LOCAL-00001" summary="Agregacion del backend y frontend">
       <option name="closed" value="true" />
@@ -233,7 +345,39 @@
       <option name="project" value="LOCAL" />
       <updated>1778388342331</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Cambios comentarios">
+      <option name="closed" value="true" />
+      <created>1778451835544</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1778451835544</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Cambios comentarios">
+      <option name="closed" value="true" />
+      <created>1778465780212</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1778465780212</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Cambios comentarios">
+      <option name="closed" value="true" />
+      <created>1778820638662</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1778820638662</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Cambios comentarios">
+      <option name="closed" value="true" />
+      <created>1778822913087</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1778822913087</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

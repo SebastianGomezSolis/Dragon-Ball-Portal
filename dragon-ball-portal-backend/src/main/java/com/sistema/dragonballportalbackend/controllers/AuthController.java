@@ -2,7 +2,6 @@ package com.sistema.dragonballportalbackend.controllers;
 
 import com.sistema.dragonballportalbackend.dto.AuthRequest;
 import com.sistema.dragonballportalbackend.dto.LoginResponse;
-import com.sistema.dragonballportalbackend.dto.RegisterRequest;
 import com.sistema.dragonballportalbackend.logic.ModeloDatos;
 import com.sistema.dragonballportalbackend.logic.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
-
     @Autowired
     private ModeloDatos modeloDatos;
 
@@ -30,7 +28,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody RegisterRequest request) {
+    public ResponseEntity<?> register(@RequestBody AuthRequest request) {
         Usuario usuario = new Usuario();
         usuario.setUsername(request.getUsername());
         usuario.setPassword(request.getPassword());
