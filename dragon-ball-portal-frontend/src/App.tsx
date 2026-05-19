@@ -16,7 +16,9 @@ import CompararPage from './pages/CompararPage';
 import { obtenerSesion, limpiarSesion } from './services/authService';
 
 function obtenerRuta(): string {
-    return window.location.pathname || '/';
+    const hash = window.location.hash || '#/';
+    const ruta = hash.replace('#', '');
+    return ruta.startsWith('/') ? ruta : `/${ruta}`;
 }
 
 function App() {
@@ -26,13 +28,12 @@ function App() {
 
     useEffect(() => {
         const handler = () => setRuta(obtenerRuta());
-        window.addEventListener('popstate', handler);
-        return () => window.removeEventListener('popstate', handler);
+        window.addEventListener('hashchange', handler);
+        return () => window.removeEventListener('hashchange', handler);
     }, []);
 
     function navegar(destino: string) {
-        window.history.pushState(null, '', destino);
-        setRuta(destino);
+        window.location.hash = destino;
     }
 
     function handleLogout() {

@@ -22,7 +22,7 @@ function Navbar(props: NavbarProps) {
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
             <div className="container">
                 <a className="navbar-brand fw-bold d-flex align-items-center gap-2"
-                   href="/"
+                   href="#/"
                    onClick={(e) => { e.preventDefault(); props.onNavegar('/'); }}>
                     <img src="/images/branding/icon.jpg"
                          alt="Dragon Ball Portal"
@@ -40,38 +40,38 @@ function Navbar(props: NavbarProps) {
                 <div className="collapse navbar-collapse" id="menuPrincipal">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link" href="/"
+                            <a className="nav-link" href="#/"
                                onClick={(e) => { e.preventDefault(); props.onNavegar('/'); }}>
                                 Inicio
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/personajes"
+                            <a className="nav-link" href="#/personajes"
                                onClick={(e) => { e.preventDefault(); props.onNavegar('/personajes'); }}>
                                 Personajes
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/sagas"
+                            <a className="nav-link" href="#/sagas"
                                onClick={(e) => { e.preventDefault(); props.onNavegar('/sagas'); }}>
                                 Sagas
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/razas"
+                            <a className="nav-link" href="#/razas"
                                onClick={(e) => { e.preventDefault(); props.onNavegar('/razas'); }}>
                                 Razas
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/comparar"
+                            <a className="nav-link" href="#/comparar"
                                onClick={(e) => { e.preventDefault(); props.onNavegar('/comparar'); }}>
                                 Comparar
                             </a>
                         </li>
                         {logueado && (
                             <li className="nav-item">
-                                <a className="nav-link" href="/contribuir"
+                                <a className="nav-link" href="#/contribuir"
                                    onClick={(e) => { e.preventDefault(); props.onNavegar('/contribuir'); }}>
                                     Contribuir
                                 </a>
@@ -79,7 +79,7 @@ function Navbar(props: NavbarProps) {
                         )}
                         {logueado && (
                             <li className="nav-item">
-                                <a className="nav-link" href="/mis-contribuciones"
+                                <a className="nav-link" href="#/mis-contribuciones"
                                    onClick={(e) => { e.preventDefault(); props.onNavegar('/mis-contribuciones'); }}>
                                     Mis contribuciones
                                 </a>
@@ -87,7 +87,7 @@ function Navbar(props: NavbarProps) {
                         )}
                         {esAdmin && (
                             <li className="nav-item">
-                                <a className="nav-link fw-semibold text-warning" href="/admin/pendientes"
+                                <a className="nav-link fw-semibold text-warning" href="#/admin/pendientes"
                                    onClick={(e) => { e.preventDefault(); props.onNavegar('/admin/pendientes'); }}>
                                     Pendientes
                                 </a>

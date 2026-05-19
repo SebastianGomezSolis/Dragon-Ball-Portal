@@ -79,7 +79,7 @@ function CatalogoPage(props: CatalogoPageProps) {
                         />
                     </div>
                     <div className="col-lg-8">
-                        <DetalleEntidad item={seleccionado} badge={props.badge} />
+                        <DetalleEntidad key={seleccionado?.id ?? 'vacio'} item={seleccionado} badge={props.badge} />
                     </div>
                 </div>
             )}

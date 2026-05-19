@@ -4,44 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ed876ae-bcf6-4c80-884a-501a44d16147" name="Changes" comment="Cambios comentarios">
+    <list default="true" id="7ed876ae-bcf6-4c80-884a-501a44d16147" name="Changes" comment="Cambios en el uso de la api, apegandome a lo que nos enseño el profe en la clase.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/dto/RegisterRequest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/AlertaMensaje.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/Banner.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/BuscadorEntidades.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/Cargando.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/DetailCard.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/DetalleEntidad.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/EntityList.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/Footer.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/GlobalBanner.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/Header.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/ListaEntidades.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/LoadingBlock.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/Navbar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/SearchPanel.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/SectionTitle.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/AdminPendientesPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/AdminPendientesPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/DetalleEntidad.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/DetalleEntidad.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/components/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/CatalogoPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/CatalogoPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/CompararPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/CompararPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/ContribuirPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/ContribuirPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/EntityCatalogPage.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/HomePage.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/InicioPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/InicioPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/LoginPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/MisContribucionesPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/MisContribucionesPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/PersonajesPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/PersonajesPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/RazasPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/RazasPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/SagasPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/SagasPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/services/api.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/services/authService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/services/authService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/types/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/utils/formatters.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/utils/formatters.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,23 +73,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0" />
-      <entry key="S60" value="1.0" />
-      <entry key="M2" value="1.0" />
-      <entry key="M5" value="1.0" />
-      <entry key="M10" value="1.0" />
-      <entry key="M15" value="1.0" />
-      <entry key="M30" value="1.0" />
-      <entry key="H1" value="1.0" />
-      <entry key="H2" value="1.0" />
-      <entry key="H4" value="1.0" />
-      <entry key="D1" value="1.0" />
-      <entry key="W1" value="1.0" />
+      <entry key="MS100" value="1.0001286911667004" />
+      <entry key="MS500" value="1.2477309157471628" />
+      <entry key="S2" value="3.556491795464808" />
+      <entry key="S5" value="7.9918882310039825" />
+      <entry key="S10" value="13.221485808970796" />
+      <entry key="S30" value="20.73460226834823" />
+      <entry key="S60" value="23.58235362963875" />
+      <entry key="M2" value="25.212425181380663" />
+      <entry key="M5" value="26.265010005429573" />
+      <entry key="M10" value="26.629085581932035" />
+      <entry key="M15" value="26.751956815085265" />
+      <entry key="M30" value="26.875593179498402" />
+      <entry key="H1" value="26.937699948403548" />
+      <entry key="H2" value="26.968825771938857" />
+      <entry key="H4" value="26.984406830154423" />
+      <entry key="D1" value="26.997400296827724" />
+      <entry key="W1" value="26.9996285932178" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -142,23 +111,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="7.059864403718795E-5" />
-      <entry key="MS500" value="0.1478288750305178" />
-      <entry key="S2" value="0.6200687121743583" />
-      <entry key="S5" value="0.8259921638269825" />
-      <entry key="S10" value="0.9088411103306135" />
-      <entry key="S30" value="0.9686405693174017" />
-      <entry key="S60" value="0.9841953918391417" />
-      <entry key="M2" value="0.9920662235149132" />
-      <entry key="M5" value="0.9968189039021158" />
-      <entry key="M10" value="0.9984081850135824" />
-      <entry key="M15" value="0.9989385082680253" />
-      <entry key="M30" value="0.9994691132136228" />
-      <entry key="H1" value="0.9997345213673592" />
-      <entry key="H2" value="0.9998672518726469" />
-      <entry key="H4" value="0.9999336237334191" />
-      <entry key="D1" value="0.9999889369829318" />
-      <entry key="W1" value="0.9999984195614969" />
+      <entry key="MS100" value="0.9461785695800331" />
+      <entry key="MS500" value="1.234002713106868" />
+      <entry key="S2" value="3.5471126035584657" />
+      <entry key="S5" value="7.976557398583513" />
+      <entry key="S10" value="13.196275100239845" />
+      <entry key="S30" value="20.712692264129036" />
+      <entry key="S60" value="23.568263828790293" />
+      <entry key="M2" value="25.204425135773704" />
+      <entry key="M5" value="26.26155500936614" />
+      <entry key="M10" value="26.627313262754768" />
+      <entry key="M15" value="26.750765129682133" />
+      <entry key="M30" value="26.87499222171999" />
+      <entry key="H1" value="26.937398182161942" />
+      <entry key="H2" value="26.968674565901395" />
+      <entry key="H4" value="26.984331146271362" />
+      <entry key="D1" value="26.997387671604578" />
+      <entry key="W1" value="26.999626789339015" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -311,7 +280,7 @@
       <workItem from="1779053900635" duration="137000" />
       <workItem from="1779063652496" duration="2718000" />
       <workItem from="1779132438963" duration="60000" />
-      <workItem from="1779140307357" duration="573000" />
+      <workItem from="1779140307357" duration="2651000" />
     </task>
     <task id="LOCAL-00001" summary="Agregacion del backend y frontend">
       <option name="closed" value="true" />
@@ -377,7 +346,31 @@
       <option name="project" value="LOCAL" />
       <updated>1778822913087</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Cambios en el uso de la api, apegandome a lo que nos enseño el profe en la clase.">
+      <option name="closed" value="true" />
+      <created>1779140933843</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1779140933843</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Cambios en el uso de la api, apegandome a lo que nos enseño el profe en la clase.">
+      <option name="closed" value="true" />
+      <created>1779140947016</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1779140947016</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Cambios en el uso de la api, apegandome a lo que nos enseño el profe en la clase.">
+      <option name="closed" value="true" />
+      <created>1779141087309</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1779141087309</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,7 +384,8 @@
     <MESSAGE value="BD" />
     <MESSAGE value="Cambios bd" />
     <MESSAGE value="Cambios comentarios" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambios comentarios" />
+    <MESSAGE value="Cambios en el uso de la api, apegandome a lo que nos enseño el profe en la clase." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios en el uso de la api, apegandome a lo que nos enseño el profe en la clase." />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
