@@ -1,6 +1,6 @@
 package com.sistema.dragonballportalbackend.dto;
 
-public class AuthRequest {
+public class RegisterRequest {
     private String username;
     private String password;
 

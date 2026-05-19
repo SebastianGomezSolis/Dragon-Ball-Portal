@@ -1,14 +1,14 @@
 package com.sistema.dragonballportalbackend.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-
-// DTO (Data Transfer Object) para la solicitud de creación de contribución.
-// Contiene los datos necesarios para crear una nueva contribución al portal.
-@Getter
-@Setter
 public class ContribucionRequest {
     private String tipo;
     private String titulo;
     private String contenidoHtml;
+
+    public String getTipo() { return tipo; }
+    public void setTipo(String tipo) { this.tipo = tipo; }
+    public String getTitulo() { return titulo; }
+    public void setTitulo(String titulo) { this.titulo = titulo; }
+    public String getContenidoHtml() { return contenidoHtml; }
+    public void setContenidoHtml(String contenidoHtml) { this.contenidoHtml = contenidoHtml; }
 }

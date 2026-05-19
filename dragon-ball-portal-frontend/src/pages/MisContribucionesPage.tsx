@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Cargando from '../components/Cargando';
-import { obtenerToken } from '../services/authService';
+import { API_BASE, getAuthHeaders } from '../services/authService';
 import { badgeEstado, formatEstado, formatFecha } from '../utils/formatters';
-
-const BASE = 'http://localhost:8080/api';
 
 interface Contribucion {
     id: number;
@@ -30,11 +28,7 @@ function MisContribucionesPage(props: MisContribucionesPageProps) {
         if (!props.sesion) return;
         const cargar = async () => {
             try {
-                const token = obtenerToken();
-                const headers: Record<string, string> = {};
-                if (token) headers['Authorization'] = `Bearer ${token}`;
-
-                const response = await fetch(`${BASE}/contribuciones/mias`, { headers });
+                const response = await fetch(`${API_BASE}/contribuciones/mias`, { headers: getAuthHeaders() });
                 if (response.ok) {
                     setItems(await response.json());
                 } else {

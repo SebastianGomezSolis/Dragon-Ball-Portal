@@ -62,8 +62,13 @@ public class AuthService {
         // Genera un token JWT con la información del usuario para autenticación posterior
         String token = jwtService.generarToken(usuario.getId(), usuario.getUsername(), usuario.getRol());
 
-        // Retorna la respuesta de login con todos los datos necesarios para el cliente
-        return new LoginResponse(usuario.getId(), usuario.getUsername(), usuario.getRol().name(), token);
+        // Construye la respuesta de login usando setters (patron del proyecto de referencia)
+        LoginResponse respuesta = new LoginResponse();
+        respuesta.setId(usuario.getId());
+        respuesta.setUsername(usuario.getUsername());
+        respuesta.setRol(usuario.getRol().name());
+        respuesta.setToken(token);
+        return respuesta;
     }
 
     // Cierra la sesión del usuario actual invalidando su estado en el sistema.

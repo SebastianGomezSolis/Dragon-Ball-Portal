@@ -1,7 +1,6 @@
 import React from 'react';
 import CatalogoPage from './CatalogoPage';
-
-const BASE = 'http://localhost:8080/api';
+import { API_BASE } from '../services/authService';
 
 interface Item {
     id: number;
@@ -11,7 +10,7 @@ interface Item {
 }
 
 async function cargarRazas(nombre?: string): Promise<Item[]> {
-    const url = `${BASE}/razas${nombre ? `?nombre=${encodeURIComponent(nombre)}` : ''}`;
+    const url = `${API_BASE}/razas${nombre ? `?nombre=${encodeURIComponent(nombre)}` : ''}`;
     const response = await fetch(url);
     if (response.ok) {
         return response.json();

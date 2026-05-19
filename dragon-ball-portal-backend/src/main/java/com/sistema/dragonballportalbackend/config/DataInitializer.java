@@ -30,11 +30,11 @@ public class DataInitializer implements CommandLineRunner {
         if (!usuarioRepository.existsByUsername("admin")) {
             Usuario admin = new Usuario();
             admin.setUsername("admin");
-            admin.setPassword("Admin123!");
+            admin.setPassword("admin123");
             admin.setRol(Rol.ADMIN);
             admin.setActivo(true);
             usuarioService.guardar(admin);
-            log.info("Admin creado automáticamente (user: admin / pass: Admin123!)");
+            log.info("Admin creado automáticamente)");
         } else {
             log.info("Admin ya existe");
         }

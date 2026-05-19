@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Cargando from '../components/Cargando';
-import { obtenerToken } from '../services/authService';
+import { API_BASE, getAuthHeaders } from '../services/authService';
 import { formatFecha } from '../utils/formatters';
-
-const BASE = 'http://localhost:8080/api';
 
 interface Contribucion {
     id: number;
@@ -32,11 +30,7 @@ function AdminPendientesPage(props: AdminPendientesPageProps) {
     async function fetchPendientes() {
         try {
             setCargando(true);
-            const token = obtenerToken();
-            const headers: Record<string, string> = {};
-            if (token) headers['Authorization'] = `Bearer ${token}`;
-
-            const response = await fetch(`${BASE}/admin/pendientes`, { headers });
+            const response = await fetch(`${API_BASE}/admin/pendientes`, { headers: getAuthHeaders() });
             if (response.ok) {
                 const datos = await response.json();
                 setItems(datos);
@@ -83,14 +77,10 @@ function AdminPendientesPage(props: AdminPendientesPageProps) {
         if (!seleccionado) return;
         setProcesando(true);
         try {
-            const token = obtenerToken();
-            const headers: Record<string, string> = { 'Content-Type': 'application/json' };
-            if (token) headers['Authorization'] = `Bearer ${token}`;
-
-            const url = `${BASE}/admin/contribuciones/${seleccionado.id}/${accion === 'aprobar' ? 'aprobar' : 'rechazar'}`;
+            const url = `${API_BASE}/admin/contribuciones/${seleccionado.id}/${accion === 'aprobar' ? 'aprobar' : 'rechazar'}`;
             const response = await fetch(url, {
                 method: 'POST',
-                headers,
+                headers: { ...getAuthHeaders('application/json') },
                 body: JSON.stringify({ observacionAdmin: observacion }),
             });
 

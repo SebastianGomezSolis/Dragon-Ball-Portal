@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Cargando from '../components/Cargando';
-
-const BASE = 'http://localhost:8080/api';
+import { API_BASE } from '../services/authService';
 
 interface Item {
     id: number;
@@ -15,7 +14,7 @@ interface InicioPageProps {
 }
 
 async function fetchItems(ruta: string): Promise<Item[]> {
-    const response = await fetch(`${BASE}${ruta}`);
+    const response = await fetch(`${API_BASE}${ruta}`);
     if (response.ok) {
         return response.json();
     }

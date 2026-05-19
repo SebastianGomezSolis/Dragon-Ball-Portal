@@ -2,33 +2,39 @@ package com.sistema.dragonballportalbackend.controllers;
 
 import com.sistema.dragonballportalbackend.dto.AuthRequest;
 import com.sistema.dragonballportalbackend.dto.LoginResponse;
+import com.sistema.dragonballportalbackend.dto.RegisterRequest;
+import com.sistema.dragonballportalbackend.dto.SesionResponse;
 import com.sistema.dragonballportalbackend.logic.ModeloDatos;
+import com.sistema.dragonballportalbackend.logic.model.SesionUsuarioBean;
 import com.sistema.dragonballportalbackend.logic.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
+
     @Autowired
     private ModeloDatos modeloDatos;
 
+    @Autowired
+    private SesionUsuarioBean sesionUsuarioBean;
+
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody AuthRequest request) {
+    public LoginResponse login(@RequestBody AuthRequest request) {
         LoginResponse respuesta = modeloDatos.getAuthService().login(request);
         if (respuesta == null) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciales invalidas");
+            throw new RuntimeException("Credenciales inválidas");
         }
-        return ResponseEntity.ok(respuesta);
+        return respuesta;
     }
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody AuthRequest request) {
+    public ResponseEntity<?> register(@RequestBody RegisterRequest request) {
         Usuario usuario = new Usuario();
         usuario.setUsername(request.getUsername());
         usuario.setPassword(request.getPassword());
@@ -40,8 +46,25 @@ public class AuthController {
     }
 
     @PostMapping("/logout")
-    public ResponseEntity<?> logout() {
+    public void logout() {
         modeloDatos.getAuthService().logout();
-        return ResponseEntity.ok("Sesion cerrada");
+    }
+
+    @GetMapping("/sesion")
+    public SesionResponse sesion() {
+        if (!sesionUsuarioBean.isLogueado()) {
+            throw new RuntimeException("No hay sesión activa");
+        }
+        SesionResponse resp = new SesionResponse();
+        resp.setId(sesionUsuarioBean.getId());
+        resp.setUsername(sesionUsuarioBean.getUsername());
+        resp.setRol(sesionUsuarioBean.getRol().name());
+        return resp;
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    public Map<String, String> handleRuntimeException(RuntimeException ex) {
+        return Map.of("error", ex.getMessage());
     }
 }

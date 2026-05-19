@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { guardarSesion } from '../services/authService';
-
-const BASE = 'http://localhost:8080/api';
+import { API_BASE, guardarSesion } from '../services/authService';
 
 interface LoginPageProps {
     onSesion: (sesion: { id: number; username: string; rol: string; token: string }) => void;
@@ -22,14 +20,21 @@ function LoginPage(props: LoginPageProps) {
         e.preventDefault();
         setCargando(true);
         try {
-            const response = await fetch(`${BASE}/auth/login`, {
+            const response = await fetch(`${API_BASE}/auth/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password }),
             });
             if (!response.ok) {
-                const error = await response.text();
-                throw new Error(error || 'Error al iniciar sesión');
+                const errorText = await response.text();
+                let errorMsg: string;
+                try {
+                    const errorJson = JSON.parse(errorText);
+                    errorMsg = errorJson.error || errorJson.mensaje || errorText;
+                } catch {
+                    errorMsg = errorText || 'Error al iniciar sesión';
+                }
+                throw new Error(errorMsg);
             }
             const sesion = await response.json();
 
@@ -58,7 +63,7 @@ function LoginPage(props: LoginPageProps) {
         e.preventDefault();
         setCargando(true);
         try {
-            const response = await fetch(`${BASE}/auth/register`, {
+            const response = await fetch(`${API_BASE}/auth/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password }),

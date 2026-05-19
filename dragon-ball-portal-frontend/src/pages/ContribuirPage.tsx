@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { obtenerToken } from '../services/authService';
-
-const BASE = 'http://localhost:8080/api';
+import { API_BASE, getAuthHeaders } from '../services/authService';
 
 declare global {
     interface Window { Quill: any; }
@@ -90,13 +88,9 @@ function ContribuirPage(props: ContribuirPageProps) {
         }
         setCargando(true);
         try {
-            const token = obtenerToken();
-            const headers: Record<string, string> = { 'Content-Type': 'application/json' };
-            if (token) headers['Authorization'] = `Bearer ${token}`;
-
-            const response = await fetch(`${BASE}/contribuciones`, {
+            const response = await fetch(`${API_BASE}/contribuciones`, {
                 method: 'POST',
-                headers,
+                headers: { ...getAuthHeaders('application/json') },
                 body: JSON.stringify({ tipo, titulo, contenidoHtml }),
             });
             if (!response.ok) {
