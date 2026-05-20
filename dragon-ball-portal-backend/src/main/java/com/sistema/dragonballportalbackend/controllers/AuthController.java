@@ -5,8 +5,9 @@ import com.sistema.dragonballportalbackend.dto.LoginResponse;
 import com.sistema.dragonballportalbackend.dto.RegisterRequest;
 import com.sistema.dragonballportalbackend.dto.SesionResponse;
 import com.sistema.dragonballportalbackend.logic.ModeloDatos;
-import com.sistema.dragonballportalbackend.logic.model.SesionUsuarioBean;
 import com.sistema.dragonballportalbackend.logic.model.Usuario;
+import com.sistema.dragonballportalbackend.security.JwtService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,12 +18,11 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
-
     @Autowired
     private ModeloDatos modeloDatos;
 
     @Autowired
-    private SesionUsuarioBean sesionUsuarioBean;
+    private JwtService jwtService;
 
     @PostMapping("/login")
     public LoginResponse login(@RequestBody AuthRequest request) {
@@ -47,19 +47,20 @@ public class AuthController {
 
     @PostMapping("/logout")
     public void logout() {
-        modeloDatos.getAuthService().logout();
     }
 
     @GetMapping("/sesion")
-    public SesionResponse sesion() {
-        if (!sesionUsuarioBean.isLogueado()) {
+    public SesionResponse sesion(HttpServletRequest request) {
+        String authHeader = request.getHeader("Authorization");
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             throw new RuntimeException("No hay sesión activa");
         }
-        SesionResponse resp = new SesionResponse();
-        resp.setId(sesionUsuarioBean.getId());
-        resp.setUsername(sesionUsuarioBean.getUsername());
-        resp.setRol(sesionUsuarioBean.getRol().name());
-        return resp;
+        String token = authHeader.substring(7);
+        return new SesionResponse(
+                jwtService.obtenerUserId(token),
+                jwtService.obtenerUsername(token),
+                jwtService.obtenerRol(token).name()
+        );
     }
 
     @ExceptionHandler(RuntimeException.class)

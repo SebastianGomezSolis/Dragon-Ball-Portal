@@ -1,7 +1,5 @@
 package com.sistema.dragonballportalbackend.security;
 
-import com.sistema.dragonballportalbackend.logic.model.Rol;
-import com.sistema.dragonballportalbackend.logic.model.SesionUsuarioBean;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -23,36 +21,25 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Autowired
     private JwtService jwtService;
 
-    @Autowired
-    private SesionUsuarioBean sesionUsuarioBean;
-
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        sesionUsuarioBean.logout();
-        SecurityContextHolder.clearContext();
-
         String authHeader = request.getHeader("Authorization");
-        String token = null;
-
-        if (authHeader != null && authHeader.startsWith("Bearer ")) {
-            token = authHeader.substring(7);
-        } else if (request.getParameter("token") != null) {
-            token = request.getParameter("token");
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            filterChain.doFilter(request, response);
+            return;
         }
 
-        if (token != null && jwtService.esValido(token)) {
-            Integer id = jwtService.obtenerUserId(token);
+        String token = authHeader.substring(7);
+        if (jwtService.esValido(token)) {
             String username = jwtService.obtenerUsername(token);
-            Rol rol = jwtService.obtenerRol(token);
+            String rol = jwtService.obtenerRol(token).name();
 
-            sesionUsuarioBean.login(id, username, rol, true);
-
-            UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
+            UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
                     username, null,
-                    List.of(new SimpleGrantedAuthority("ROLE_" + rol.name()))
+                    List.of(new SimpleGrantedAuthority("ROLE_" + rol))
             );
-            authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-            SecurityContextHolder.getContext().setAuthentication(authToken);
+            auth.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+            SecurityContextHolder.getContext().setAuthentication(auth);
         }
 
         filterChain.doFilter(request, response);

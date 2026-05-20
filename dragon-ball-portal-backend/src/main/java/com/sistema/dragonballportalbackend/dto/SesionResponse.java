@@ -5,6 +5,14 @@ public class SesionResponse {
     private String username;
     private String rol;
 
+    public SesionResponse() {}
+
+    public SesionResponse(Integer id, String username, String rol) {
+        this.id = id;
+        this.username = username;
+        this.rol = rol;
+    }
+
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
     public String getUsername() { return username; }
