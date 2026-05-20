@@ -5,8 +5,6 @@ public class SesionResponse {
     private String username;
     private String rol;
 
-    public SesionResponse() {}
-
     public SesionResponse(Integer id, String username, String rol) {
         this.id = id;
         this.username = username;

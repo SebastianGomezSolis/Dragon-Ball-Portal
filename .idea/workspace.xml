@@ -4,33 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ed876ae-bcf6-4c80-884a-501a44d16147" name="Changes" comment="Cambios en el uso de la api, apegandome a lo que nos enseño el profe en la clase.">
+    <list default="true" id="7ed876ae-bcf6-4c80-884a-501a44d16147" name="Changes" comment="Cambios en el backend.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/config/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/config/DataInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/config/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/dto/AuthRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/dto/AuthRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/dto/ContribucionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/dto/ContribucionRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/dto/DecisionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/dto/DecisionRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/dto/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/dto/LoginResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/servicios/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/logic/servicios/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/java/com/sistema/dragonballportalbackend/security/JwtAuthFilter.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/images/personajes/freezer.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/images/personajes/gohan.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/images/personajes/goku.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/images/personajes/piccolo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/public/images/personajes/vegeta.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/AdminPendientesPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/AdminPendientesPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/CompararPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/CompararPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/ContribuirPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/ContribuirPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/InicioPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/InicioPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/LoginPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/MisContribucionesPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/MisContribucionesPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/PersonajesPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/PersonajesPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/RazasPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/RazasPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/SagasPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/pages/SagasPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/services/authService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dragon-ball-portal-frontend/src/services/authService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +37,7 @@
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="111" />
+    <option name="cachedIndexableFilesCount" value="113" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -93,23 +69,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0001286911667004" />
-      <entry key="MS500" value="1.2477309157471628" />
-      <entry key="S2" value="3.556491795464808" />
-      <entry key="S5" value="7.9918882310039825" />
-      <entry key="S10" value="13.221485808970796" />
-      <entry key="S30" value="20.73460226834823" />
-      <entry key="S60" value="23.58235362963875" />
-      <entry key="M2" value="25.212425181380663" />
-      <entry key="M5" value="26.265010005429573" />
-      <entry key="M10" value="26.629085581932035" />
-      <entry key="M15" value="26.751956815085265" />
-      <entry key="M30" value="26.875593179498402" />
-      <entry key="H1" value="26.937699948403548" />
-      <entry key="H2" value="26.968825771938857" />
-      <entry key="H4" value="26.984406830154423" />
-      <entry key="D1" value="26.997400296827724" />
-      <entry key="W1" value="26.9996285932178" />
+      <entry key="MS100" value="1.0000000020569586" />
+      <entry key="MS500" value="1.0272838387339487" />
+      <entry key="S2" value="2.5492936108837587" />
+      <entry key="S5" value="6.984145403044139" />
+      <entry key="S10" value="12.89279348628144" />
+      <entry key="S30" value="22.373039227261927" />
+      <entry key="S60" value="26.22146902980427" />
+      <entry key="M2" value="28.479784380064665" />
+      <entry key="M5" value="29.958375765530317" />
+      <entry key="M10" value="30.473411782572228" />
+      <entry key="M15" value="30.64764340261009" />
+      <entry key="M30" value="30.823169217186287" />
+      <entry key="H1" value="30.911420810490853" />
+      <entry key="H2" value="30.955669370758955" />
+      <entry key="H4" value="30.97782441611723" />
+      <entry key="D1" value="30.99630264216236" />
+      <entry key="W1" value="30.999471771059817" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -131,23 +107,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9461785695800331" />
-      <entry key="MS500" value="1.234002713106868" />
-      <entry key="S2" value="3.5471126035584657" />
-      <entry key="S5" value="7.976557398583513" />
-      <entry key="S10" value="13.196275100239845" />
-      <entry key="S30" value="20.712692264129036" />
-      <entry key="S60" value="23.568263828790293" />
-      <entry key="M2" value="25.204425135773704" />
-      <entry key="M5" value="26.26155500936614" />
-      <entry key="M10" value="26.627313262754768" />
-      <entry key="M15" value="26.750765129682133" />
-      <entry key="M30" value="26.87499222171999" />
-      <entry key="H1" value="26.937398182161942" />
-      <entry key="H2" value="26.968674565901395" />
-      <entry key="H4" value="26.984331146271362" />
-      <entry key="D1" value="26.997387671604578" />
-      <entry key="W1" value="26.999626789339015" />
+      <entry key="MS100" value="0.9265880638227582" />
+      <entry key="MS500" value="1.0117464168841466" />
+      <entry key="S2" value="2.5396792762621025" />
+      <entry key="S5" value="6.971050409070381" />
+      <entry key="S10" value="12.871451081496078" />
+      <entry key="S30" value="22.352179782562477" />
+      <entry key="S60" value="26.207503643354524" />
+      <entry key="M2" value="28.471684446743428" />
+      <entry key="M5" value="29.9548315461736" />
+      <entry key="M10" value="30.471585653798737" />
+      <entry key="M15" value="30.646413722271706" />
+      <entry key="M30" value="30.82254818105054" />
+      <entry key="H1" value="30.911108731060576" />
+      <entry key="H2" value="30.955512939147138" />
+      <entry key="H4" value="30.977746102142035" />
+      <entry key="D1" value="30.996289576181955" />
+      <entry key="W1" value="30.999469904156655" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -303,7 +279,9 @@
       <workItem from="1779140307357" duration="2651000" />
       <workItem from="1779150930082" duration="159000" />
       <workItem from="1779167115956" duration="685000" />
-      <workItem from="1779221461920" duration="3771000" />
+      <workItem from="1779221461920" duration="4188000" />
+      <workItem from="1779233244854" duration="190000" />
+      <workItem from="1779247395390" duration="1654000" />
     </task>
     <task id="LOCAL-00001" summary="Agregacion del backend y frontend">
       <option name="closed" value="true" />
@@ -401,7 +379,23 @@
       <option name="project" value="LOCAL" />
       <updated>1779151077729</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Cambios en el backend.">
+      <option name="closed" value="true" />
+      <created>1779228371675</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1779228371675</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Cambios en el backend.">
+      <option name="closed" value="true" />
+      <created>1779249043281</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1779249043281</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,7 +410,8 @@
     <MESSAGE value="Cambios bd" />
     <MESSAGE value="Cambios comentarios" />
     <MESSAGE value="Cambios en el uso de la api, apegandome a lo que nos enseño el profe en la clase." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambios en el uso de la api, apegandome a lo que nos enseño el profe en la clase." />
+    <MESSAGE value="Cambios en el backend." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios en el backend." />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

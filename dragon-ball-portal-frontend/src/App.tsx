@@ -12,7 +12,6 @@ import RazasPage from './pages/RazasPage';
 import ContribuirPage from './pages/ContribuirPage';
 import MisContribucionesPage from './pages/MisContribucionesPage';
 import AdminPendientesPage from './pages/AdminPendientesPage';
-import CompararPage from './pages/CompararPage';
 import { obtenerSesion, limpiarSesion } from './services/authService';
 
 function obtenerRuta(): string {
@@ -59,8 +58,6 @@ function App() {
                 return <SagasPage />;
             case '/razas':
                 return <RazasPage />;
-            case '/comparar':
-                return <CompararPage />;
             case '/contribuir':
                 return (
                     <ContribuirPage

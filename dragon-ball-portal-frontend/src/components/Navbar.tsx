@@ -63,12 +63,6 @@ function Navbar(props: NavbarProps) {
                                 Razas
                             </a>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#/comparar"
-                               onClick={(e) => { e.preventDefault(); props.onNavegar('/comparar'); }}>
-                                Comparar
-                            </a>
-                        </li>
                         {logueado && (
                             <li className="nav-item">
                                 <a className="nav-link" href="#/contribuir"

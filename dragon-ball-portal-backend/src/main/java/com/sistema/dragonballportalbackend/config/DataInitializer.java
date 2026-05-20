@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 // Implementa CommandLineRunner para correr lógica después de que el contexto se cargue.
 @Component
 public class DataInitializer implements CommandLineRunner {
-
     private static final Logger log = LoggerFactory.getLogger(DataInitializer.class);
 
     private final UsuarioRepository usuarioRepository;

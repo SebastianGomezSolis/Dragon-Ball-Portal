@@ -51,14 +51,6 @@ const configs: Record<string, BannerConfig> = {
         imagen: '/images/pages/goku.jpg',
         altImagen: 'Razas',
     },
-    // Banner para la página de comparación
-    '/comparar': {
-        eyebrow: 'Herramienta',
-        titulo: 'Comparar',
-        descripcion: 'Seleccioná dos elementos y comparalos lado a lado.',
-        imagen: '/images/pages/personajes.png',
-        altImagen: 'Comparar',
-    },
     // Banner para la página de contribuir
     '/contribuir': {
         eyebrow: 'Mi cuenta',

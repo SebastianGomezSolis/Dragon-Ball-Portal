@@ -6,8 +6,6 @@ public class LoginResponse {
     private String rol;
     private String token;
 
-    public LoginResponse() {}
-
     public LoginResponse(Integer id, String username, String rol, String token) {
         this.id = id;
         this.username = username;
