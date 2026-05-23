@@ -93,7 +93,7 @@ function ContribuirPage(props: ContribuirPageProps) {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${sesion?.token}`,
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
                 },
                 body: JSON.stringify({ tipo, titulo, contenidoHtml }),
             });

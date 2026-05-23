@@ -32,7 +32,7 @@ function AdminPendientesPage(props: AdminPendientesPageProps) {
         try {
             setCargando(true);
             const response = await fetch('http://localhost:8080/api/admin/pendientes', {
-                headers: { 'Authorization': `Bearer ${sesion?.token}` },
+                headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
             });
             if (response.ok) {
                 const datos = await response.json();
@@ -83,7 +83,7 @@ function AdminPendientesPage(props: AdminPendientesPageProps) {
             const url = `http://localhost:8080/api/admin/contribuciones/${seleccionado.id}/${accion === 'aprobar' ? 'aprobar' : 'rechazar'}`;
             const response = await fetch(url, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${sesion?.token}` },
+                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}` },
                 body: JSON.stringify({ observacionAdmin: observacion }),
             });
 

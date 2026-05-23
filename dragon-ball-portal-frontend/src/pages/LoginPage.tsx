@@ -48,6 +48,7 @@ function LoginPage(props: LoginPageProps) {
             }
 
             localStorage.setItem('dbp.session', JSON.stringify(sesion));
+            localStorage.setItem('token', sesion.token);
             props.onMensaje({ tipo: 'success', texto: `Bienvenido, ${sesion.username}.` });
             navigate('/');
         } catch (e: unknown) {

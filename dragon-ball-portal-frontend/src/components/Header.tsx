@@ -10,6 +10,7 @@ function Header() {
 
     function handleLogout() {
         localStorage.removeItem('dbp.session');
+        localStorage.removeItem('token');
         navigate('/');
     }
 

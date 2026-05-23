@@ -30,7 +30,7 @@ function MisContribucionesPage(props: MisContribucionesPageProps) {
         const cargar = async () => {
             try {
                 const response = await fetch('http://localhost:8080/api/contribuciones/mias', {
-                    headers: { 'Authorization': `Bearer ${sesion.token}` },
+                    headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
                 });
                 if (response.ok) {
                     setItems(await response.json());
