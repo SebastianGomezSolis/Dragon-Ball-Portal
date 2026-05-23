@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Cargando from '../components/Cargando';
-import { API_BASE } from '../services/authService';
+import { useNavigate } from 'react-router-dom';
+import LoadingBlock from '../components/LoadingBlock';
 
 interface Item {
     id: number;
@@ -9,12 +9,11 @@ interface Item {
 }
 
 interface InicioPageProps {
-    onNavegar: (ruta: string) => void;
     onMensaje: (msg: { tipo: 'success' | 'danger'; texto: string }) => void;
 }
 
 async function fetchItems(ruta: string): Promise<Item[]> {
-    const response = await fetch(`${API_BASE}${ruta}`);
+    const response = await fetch(`http://localhost:8080/api${ruta}`);
     if (response.ok) {
         return response.json();
     }
@@ -22,6 +21,7 @@ async function fetchItems(ruta: string): Promise<Item[]> {
 }
 
 function InicioPage(props: InicioPageProps) {
+    const navigate = useNavigate();
     const [personajes, setPersonajes] = useState<Item[]>([]);
     const [sagas, setSagas] = useState<Item[]>([]);
     const [razas, setRazas] = useState<Item[]>([]);
@@ -64,7 +64,7 @@ function InicioPage(props: InicioPageProps) {
                                 </p>
                                 <button className="btn btn-outline-dark"
                                         type="button"
-                                        onClick={() => props.onNavegar('/personajes')}>
+                                        onClick={() => navigate('/personajes')}>
                                     Ver personajes
                                 </button>
                             </div>
@@ -82,7 +82,7 @@ function InicioPage(props: InicioPageProps) {
                                 </p>
                                 <button className="btn btn-outline-dark"
                                         type="button"
-                                        onClick={() => props.onNavegar('/sagas')}>
+                                        onClick={() => navigate('/sagas')}>
                                     Ver sagas
                                 </button>
                             </div>
@@ -100,7 +100,7 @@ function InicioPage(props: InicioPageProps) {
                                 </p>
                                 <button className="btn btn-outline-dark"
                                         type="button"
-                                        onClick={() => props.onNavegar('/razas')}>
+                                        onClick={() => navigate('/razas')}>
                                     Ver razas
                                 </button>
                             </div>
@@ -113,7 +113,7 @@ function InicioPage(props: InicioPageProps) {
                 <h2 className="fw-bold mb-4">Contenido publicado</h2>
                 <h6> Ultimos 5 agregados </h6>
                 {cargando ? (
-                    <Cargando />
+                    <LoadingBlock />
                 ) : (
                     <div className="row g-4">
                         <div className="col-lg-4">

@@ -2,14 +2,17 @@ package com.sistema.dragonballportalbackend.controllers;
 
 import com.sistema.dragonballportalbackend.dto.DecisionRequest;
 import com.sistema.dragonballportalbackend.logic.ModeloDatos;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/admin")
 public class AdminController {
-    @Autowired private ModeloDatos modeloDatos;
+    private final ModeloDatos modeloDatos;
+
+    public AdminController(ModeloDatos modeloDatos) {
+        this.modeloDatos = modeloDatos;
+    }
 
     @GetMapping("/pendientes")
     public ResponseEntity<?> pendientes() {

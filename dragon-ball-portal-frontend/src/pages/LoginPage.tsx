@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import { API_BASE, guardarSesion } from '../services/authService';
+import { useNavigate } from 'react-router-dom';
 
 interface LoginPageProps {
-    onSesion: (sesion: { id: number; username: string; rol: string; token: string }) => void;
-    onNavegar: (ruta: string) => void;
     onMensaje: (msg: { tipo: 'success' | 'danger'; texto: string }) => void;
 }
 
 type Modo = 'login' | 'register';
 
 function LoginPage(props: LoginPageProps) {
+    const navigate = useNavigate();
     const [modo, setModo] = useState<Modo>('login');
     const [username, setUsername] = useState(localStorage.getItem('dbp.username') ?? '');
     const [password, setPassword] = useState(localStorage.getItem('dbp.password') ?? '');
@@ -20,7 +19,7 @@ function LoginPage(props: LoginPageProps) {
         e.preventDefault();
         setCargando(true);
         try {
-            const response = await fetch(`${API_BASE}/auth/login`, {
+            const response = await fetch('http://localhost:8080/api/auth/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password }),
@@ -48,10 +47,9 @@ function LoginPage(props: LoginPageProps) {
                 localStorage.removeItem('dbp.password');
             }
 
-            guardarSesion(sesion);
-            props.onSesion(sesion);
+            localStorage.setItem('dbp.session', JSON.stringify(sesion));
             props.onMensaje({ tipo: 'success', texto: `Bienvenido, ${sesion.username}.` });
-            props.onNavegar('/');
+            navigate('/');
         } catch (e: unknown) {
             props.onMensaje({ tipo: 'danger', texto: e instanceof Error ? e.message : 'Error desconocido' });
         } finally {
@@ -63,7 +61,7 @@ function LoginPage(props: LoginPageProps) {
         e.preventDefault();
         setCargando(true);
         try {
-            const response = await fetch(`${API_BASE}/auth/register`, {
+            const response = await fetch('http://localhost:8080/api/auth/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password }),

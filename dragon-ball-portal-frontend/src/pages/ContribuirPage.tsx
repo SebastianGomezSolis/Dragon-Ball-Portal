@@ -1,17 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { API_BASE, getAuthHeaders } from '../services/authService';
+import { useNavigate } from 'react-router-dom';
 
 declare global {
     interface Window { Quill: any; }
 }
 
 interface ContribuirPageProps {
-    sesion: { id: number; username: string; rol: string; token: string } | null;
-    onNavegar: (ruta: string) => void;
     onMensaje: (msg: { tipo: 'success' | 'danger'; texto: string }) => void;
 }
 
 function ContribuirPage(props: ContribuirPageProps) {
+    const navigate = useNavigate();
+    const raw = localStorage.getItem('dbp.session');
+    const sesion: { id: number; username: string; rol: string; token: string } | null = raw ? JSON.parse(raw) : null;
     const [tipo, setTipo] = useState('PERSONAJE');
     const [titulo, setTitulo] = useState('');
     const [contenidoHtml, setContenidoHtml] = useState('');
@@ -59,14 +60,14 @@ function ContribuirPage(props: ContribuirPageProps) {
         quillRef.current = quill;
     }, [quillListo]);
 
-    if (!props.sesion) {
+    if (!sesion) {
         return (
             <section className="container py-5">
                 <div className="alert alert-warning">
                     Debés iniciar sesión para enviar contribuciones.
                 </div>
                 <button type="button" className="btn btn-warning mt-2"
-                        onClick={() => props.onNavegar('/login')}>
+                        onClick={() => navigate('/login')}>
                     Ir al login
                 </button>
             </section>
@@ -88,9 +89,12 @@ function ContribuirPage(props: ContribuirPageProps) {
         }
         setCargando(true);
         try {
-            const response = await fetch(`${API_BASE}/contribuciones`, {
+            const response = await fetch('http://localhost:8080/api/contribuciones', {
                 method: 'POST',
-                headers: { ...getAuthHeaders('application/json') },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${sesion?.token}`,
+                },
                 body: JSON.stringify({ tipo, titulo, contenidoHtml }),
             });
             if (!response.ok) {
@@ -98,7 +102,7 @@ function ContribuirPage(props: ContribuirPageProps) {
                 throw new Error(error || 'Error al enviar contribución');
             }
             props.onMensaje({ tipo: 'success', texto: 'Contribución enviada para revisión.' });
-            props.onNavegar('/mis-contribuciones');
+            navigate('/mis-contribuciones');
         } catch (e: unknown) {
             props.onMensaje({ tipo: 'danger', texto: e instanceof Error ? e.message : 'Error desconocido' });
         } finally {

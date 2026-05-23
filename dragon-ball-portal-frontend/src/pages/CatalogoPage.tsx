@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import BuscadorEntidades from '../components/BuscadorEntidades';
-import Cargando from '../components/Cargando';
+import LoadingBlock from '../components/LoadingBlock';
 import DetalleEntidad from '../components/DetalleEntidad';
 import ListaEntidades from '../components/ListaEntidades';
 
@@ -65,7 +65,7 @@ function CatalogoPage(props: CatalogoPageProps) {
             />
 
             {cargando ? (
-                <Cargando />
+                <LoadingBlock />
             ) : error ? (
                 <div className="alert alert-danger">{error}</div>
             ) : (

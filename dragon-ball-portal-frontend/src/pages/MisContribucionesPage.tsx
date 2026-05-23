@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Cargando from '../components/Cargando';
-import { API_BASE, getAuthHeaders } from '../services/authService';
+import { useNavigate } from 'react-router-dom';
+import LoadingBlock from '../components/LoadingBlock';
 import { badgeEstado, formatEstado, formatFecha } from '../utils/formatters';
 
 interface Contribucion {
@@ -15,20 +15,23 @@ interface Contribucion {
 }
 
 interface MisContribucionesPageProps {
-    sesion: { id: number; username: string; rol: string; token: string } | null;
-    onNavegar: (ruta: string) => void;
     onMensaje: (msg: { tipo: 'success' | 'danger'; texto: string }) => void;
 }
 
 function MisContribucionesPage(props: MisContribucionesPageProps) {
+    const navigate = useNavigate();
+    const raw = localStorage.getItem('dbp.session');
+    const sesion: { id: number; username: string; rol: string; token: string } | null = raw ? JSON.parse(raw) : null;
     const [items, setItems] = useState<Contribucion[]>([]);
     const [cargando, setCargando] = useState(true);
 
     useEffect(() => {
-        if (!props.sesion) return;
+        if (!sesion) return;
         const cargar = async () => {
             try {
-                const response = await fetch(`${API_BASE}/contribuciones/mias`, { headers: getAuthHeaders() });
+                const response = await fetch('http://localhost:8080/api/contribuciones/mias', {
+                    headers: { 'Authorization': `Bearer ${sesion.token}` },
+                });
                 if (response.ok) {
                     setItems(await response.json());
                 } else {
@@ -43,16 +46,16 @@ function MisContribucionesPage(props: MisContribucionesPageProps) {
         };
         cargar();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [props.sesion]);
+    }, []);
 
-    if (!props.sesion) {
+    if (!sesion) {
         return (
             <section className="container py-5">
                 <div className="alert alert-warning">
                     Debés iniciar sesión para ver tus contribuciones.
                 </div>
                 <button type="button" className="btn btn-warning mt-2"
-                        onClick={() => props.onNavegar('/login')}>
+                        onClick={() => navigate('/login')}>
                     Ir al login
                 </button>
             </section>
@@ -67,14 +70,14 @@ function MisContribucionesPage(props: MisContribucionesPageProps) {
             </p>
 
             {cargando ? (
-                <Cargando />
+                <LoadingBlock />
             ) : items.length === 0 ? (
                 <div className="alert alert-secondary">
                     No has enviado contribuciones todavía.{' '}
-                    <button type="button" className="btn btn-link p-0"
-                            onClick={() => props.onNavegar('/contribuir')}>
-                        Enviá tu primer aporte.
-                    </button>
+                                    <button type="button" className="btn btn-link p-0"
+                                            onClick={() => navigate('/contribuir')}>
+                                        Enviá tu primer aporte.
+                                    </button>
                 </div>
             ) : (
                 <div className="row g-3">

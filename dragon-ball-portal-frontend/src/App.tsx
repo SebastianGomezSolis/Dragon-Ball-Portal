@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Navbar from './components/Navbar';
+import Header from './components/Header';
 import Footer from './components/Footer';
-import Banner from './components/Banner';
+import GlobalBanner from './components/GlobalBanner';
 import AlertaMensaje from './components/AlertaMensaje';
+import ProtectedRoute from './components/ProtectedRoute';
 import InicioPage from './pages/InicioPage';
 import LoginPage from './pages/LoginPage';
 import PersonajesPage from './pages/PersonajesPage';
@@ -12,104 +14,53 @@ import RazasPage from './pages/RazasPage';
 import ContribuirPage from './pages/ContribuirPage';
 import MisContribucionesPage from './pages/MisContribucionesPage';
 import AdminPendientesPage from './pages/AdminPendientesPage';
-import { obtenerSesion, limpiarSesion } from './services/authService';
 
-function obtenerRuta(): string {
-    const hash = window.location.hash || '#/';
-    const ruta = hash.replace('#', '');
-    return ruta.startsWith('/') ? ruta : `/${ruta}`;
+interface MensajeGlobal {
+    tipo: 'success' | 'danger';
+    texto: string;
 }
 
-function App() {
-    const [ruta, setRuta] = useState<string>(obtenerRuta);
-    const [sesion, setSesion] = useState<{ id: number; username: string; rol: string; token: string } | null>(obtenerSesion);
-    const [mensaje, setMensaje] = useState<{ tipo: 'success' | 'danger'; texto: string } | null>(null);
-
-    useEffect(() => {
-        const handler = () => setRuta(obtenerRuta());
-        window.addEventListener('hashchange', handler);
-        return () => window.removeEventListener('hashchange', handler);
-    }, []);
-
-    function navegar(destino: string) {
-        window.location.hash = destino;
-    }
-
-    function handleLogout() {
-        limpiarSesion();
-        setSesion(null);
-        setMensaje({ tipo: 'success', texto: 'Sesión cerrada correctamente.' });
-        navegar('/');
-    }
-
-    function renderPagina() {
-        switch (ruta) {
-            case '/login':
-                return (
-                    <LoginPage
-                        onSesion={setSesion}
-                        onNavegar={navegar}
-                        onMensaje={setMensaje}
-                    />
-                );
-            case '/personajes':
-                return <PersonajesPage />;
-            case '/sagas':
-                return <SagasPage />;
-            case '/razas':
-                return <RazasPage />;
-            case '/contribuir':
-                return (
-                    <ContribuirPage
-                        sesion={sesion}
-                        onNavegar={navegar}
-                        onMensaje={setMensaje}
-                    />
-                );
-            case '/mis-contribuciones':
-                return (
-                    <MisContribucionesPage
-                        sesion={sesion}
-                        onNavegar={navegar}
-                        onMensaje={setMensaje}
-                    />
-                );
-            case '/admin/pendientes':
-                return (
-                    <AdminPendientesPage
-                        sesion={sesion}
-                        onNavegar={navegar}
-                        onMensaje={setMensaje}
-                    />
-                );
-            default:
-                return (
-                    <InicioPage
-                        onNavegar={navegar}
-                        onMensaje={setMensaje}
-                    />
-                );
-        }
-    }
+function AppContent() {
+    const [mensaje, setMensaje] = useState<MensajeGlobal | null>(null);
 
     return (
         <div className="d-flex flex-column min-vh-100 bg-body-tertiary">
-            <Navbar
-                sesion={sesion}
-                onNavegar={navegar}
-                onLogout={handleLogout}
-            />
+            <Header />
 
-            <Banner ruta={ruta} />
+            <GlobalBanner />
 
             <AlertaMensaje mensaje={mensaje} onCerrar={() => setMensaje(null)} />
 
             <main className="flex-grow-1">
-                {renderPagina()}
+                <Routes>
+                    <Route path="/login" element={<LoginPage onMensaje={setMensaje} />} />
+                    <Route path="/personajes" element={<PersonajesPage />} />
+                    <Route path="/sagas" element={<SagasPage />} />
+                    <Route path="/razas" element={<RazasPage />} />
+                    <Route path="/" element={<InicioPage onMensaje={setMensaje} />} />
+
+                    <Route path="/contribuir" element={
+                        <ProtectedRoute><ContribuirPage onMensaje={setMensaje} /></ProtectedRoute>
+                    } />
+                    <Route path="/mis-contribuciones" element={
+                        <ProtectedRoute><MisContribucionesPage onMensaje={setMensaje} /></ProtectedRoute>
+                    } />
+                    <Route path="/admin/pendientes" element={
+                        <ProtectedRoute rol="ADMIN"><AdminPendientesPage onMensaje={setMensaje} /></ProtectedRoute>
+                    } />
+                </Routes>
             </main>
 
             <Footer />
         </div>
+    );
+}
+
+function App() {
+    return (
+        <BrowserRouter>
+            <AppContent />
+        </BrowserRouter>
     );
 }
 

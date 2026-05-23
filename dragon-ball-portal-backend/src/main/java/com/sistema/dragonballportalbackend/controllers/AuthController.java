@@ -7,30 +7,30 @@ import com.sistema.dragonballportalbackend.dto.SesionResponse;
 import com.sistema.dragonballportalbackend.logic.ModeloDatos;
 import com.sistema.dragonballportalbackend.logic.model.Usuario;
 import com.sistema.dragonballportalbackend.security.JwtService;
-import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
-    @Autowired
-    private ModeloDatos modeloDatos;
+    private final ModeloDatos modeloDatos;
+    private final JwtService jwtService;
 
-    @Autowired
-    private JwtService jwtService;
+    public AuthController(ModeloDatos modeloDatos, JwtService jwtService) {
+        this.modeloDatos = modeloDatos;
+        this.jwtService = jwtService;
+    }
 
     @PostMapping("/login")
     public LoginResponse login(@RequestBody AuthRequest request) {
-        LoginResponse respuesta = modeloDatos.getAuthService().login(request);
-        if (respuesta == null) {
-            throw new RuntimeException("Credenciales inválidas");
+        Usuario usuario = modeloDatos.getAuthService().login(request);
+        if (usuario == null) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Credenciales inválidas");
         }
-        return respuesta;
+        String token = jwtService.generarToken(usuario.getId(), usuario.getUsername(), usuario.getRol());
+        return new LoginResponse(usuario.getId(), usuario.getUsername(), usuario.getRol().name(), token);
     }
 
     @PostMapping("/register")
@@ -46,26 +46,25 @@ public class AuthController {
     }
 
     @PostMapping("/logout")
-    public void logout() {
+    public String logout() {
+        return "Sesión cerrada";
     }
 
     @GetMapping("/sesion")
-    public SesionResponse sesion(HttpServletRequest request) {
-        String authHeader = request.getHeader("Authorization");
+    public SesionResponse sesion(@RequestHeader("Authorization") String authHeader) {
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            throw new RuntimeException("No hay sesión activa");
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "No hay sesión activa");
         }
-        String token = authHeader.substring(7);
-        return new SesionResponse(
-                jwtService.obtenerUserId(token),
-                jwtService.obtenerUsername(token),
-                jwtService.obtenerRol(token).name()
-        );
-    }
-
-    @ExceptionHandler(RuntimeException.class)
-    @ResponseStatus(HttpStatus.UNAUTHORIZED)
-    public Map<String, String> handleRuntimeException(RuntimeException ex) {
-        return Map.of("error", ex.getMessage());
+        try {
+            String token = authHeader.substring(7);
+            var claims = jwtService.parsearClaims(token);
+            return new SesionResponse(
+                    claims.get("id", Integer.class),
+                    claims.getSubject(),
+                    claims.get("rol", String.class)
+            );
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Token inválido");
+        }
     }
 }

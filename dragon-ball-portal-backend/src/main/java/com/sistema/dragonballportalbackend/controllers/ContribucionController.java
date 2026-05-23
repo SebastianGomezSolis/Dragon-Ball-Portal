@@ -4,24 +4,28 @@ import com.sistema.dragonballportalbackend.dto.ContribucionRequest;
 import com.sistema.dragonballportalbackend.logic.ModeloDatos;
 import com.sistema.dragonballportalbackend.logic.model.Contribucion;
 import com.sistema.dragonballportalbackend.logic.model.Usuario;
-import com.sistema.dragonballportalbackend.security.JwtService;
-import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.beans.factory.annotation.Autowired;
+import io.jsonwebtoken.Claims;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/contribuciones")
 public class ContribucionController {
-    @Autowired private ModeloDatos modeloDatos;
+    private final ModeloDatos modeloDatos;
 
-    @Autowired private JwtService jwtService;
+    public ContribucionController(ModeloDatos modeloDatos) {
+        this.modeloDatos = modeloDatos;
+    }
+
+    private Integer obtenerUserId() {
+        Claims claims = (Claims) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return claims.get("id", Integer.class);
+    }
 
     @PostMapping
-    public ResponseEntity<?> crear(@RequestBody ContribucionRequest request, HttpServletRequest httpRequest) {
-        String authHeader = httpRequest.getHeader("Authorization");
-        String token = authHeader.substring(7);
-        Integer userId = jwtService.obtenerUserId(token);
+    public ResponseEntity<?> crear(@RequestBody ContribucionRequest request) {
+        Integer userId = obtenerUserId();
 
         Contribucion c = new Contribucion();
         c.setTipo(request.getTipo());
@@ -39,10 +43,8 @@ public class ContribucionController {
     }
 
     @GetMapping("/mias")
-    public ResponseEntity<?> mias(HttpServletRequest httpRequest) {
-        String authHeader = httpRequest.getHeader("Authorization");
-        String token = authHeader.substring(7);
-        Integer userId = jwtService.obtenerUserId(token);
+    public ResponseEntity<?> mias() {
+        Integer userId = obtenerUserId();
         return ResponseEntity.ok(modeloDatos.getContribucionService().findByUsuarioId(userId));
     }
 }

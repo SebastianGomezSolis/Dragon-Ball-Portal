@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Cargando from '../components/Cargando';
-import { API_BASE, getAuthHeaders } from '../services/authService';
+import { useNavigate } from 'react-router-dom';
+import LoadingBlock from '../components/LoadingBlock';
 import { formatFecha } from '../utils/formatters';
 
 interface Contribucion {
@@ -15,12 +15,13 @@ interface Contribucion {
 }
 
 interface AdminPendientesPageProps {
-    sesion: { id: number; username: string; rol: string; token: string } | null;
-    onNavegar: (ruta: string) => void;
     onMensaje: (msg: { tipo: 'success' | 'danger'; texto: string }) => void;
 }
 
 function AdminPendientesPage(props: AdminPendientesPageProps) {
+    const navigate = useNavigate();
+    const raw = localStorage.getItem('dbp.session');
+    const sesion: { id: number; username: string; rol: string; token: string } | null = raw ? JSON.parse(raw) : null;
     const [items, setItems] = useState<Contribucion[]>([]);
     const [seleccionado, setSeleccionado] = useState<Contribucion | null>(null);
     const [observacion, setObservacion] = useState('');
@@ -30,7 +31,9 @@ function AdminPendientesPage(props: AdminPendientesPageProps) {
     async function fetchPendientes() {
         try {
             setCargando(true);
-            const response = await fetch(`${API_BASE}/admin/pendientes`, { headers: getAuthHeaders() });
+            const response = await fetch('http://localhost:8080/api/admin/pendientes', {
+                headers: { 'Authorization': `Bearer ${sesion?.token}` },
+            });
             if (response.ok) {
                 const datos = await response.json();
                 setItems(datos);
@@ -47,13 +50,13 @@ function AdminPendientesPage(props: AdminPendientesPageProps) {
     }
 
     useEffect(() => {
-        if (props.sesion?.rol === 'ADMIN') {
+        if (sesion?.rol === 'ADMIN') {
             fetchPendientes();
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [props.sesion]);
+    }, []);
 
-    if (!props.sesion) {
+    if (!sesion) {
         return (
             <section className="container py-5">
                 <div className="alert alert-warning">Debés iniciar sesión.</div>
@@ -61,12 +64,12 @@ function AdminPendientesPage(props: AdminPendientesPageProps) {
         );
     }
 
-    if (props.sesion.rol !== 'ADMIN') {
+    if (sesion.rol !== 'ADMIN') {
         return (
             <section className="container py-5">
                 <div className="alert alert-danger">Solo los administradores pueden acceder a esta sección.</div>
                 <button type="button" className="btn btn-outline-secondary mt-2"
-                        onClick={() => props.onNavegar('/')}>
+                        onClick={() => navigate('/')}>
                     Volver al inicio
                 </button>
             </section>
@@ -77,10 +80,10 @@ function AdminPendientesPage(props: AdminPendientesPageProps) {
         if (!seleccionado) return;
         setProcesando(true);
         try {
-            const url = `${API_BASE}/admin/contribuciones/${seleccionado.id}/${accion === 'aprobar' ? 'aprobar' : 'rechazar'}`;
+            const url = `http://localhost:8080/api/admin/contribuciones/${seleccionado.id}/${accion === 'aprobar' ? 'aprobar' : 'rechazar'}`;
             const response = await fetch(url, {
                 method: 'POST',
-                headers: { ...getAuthHeaders('application/json') },
+                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${sesion?.token}` },
                 body: JSON.stringify({ observacionAdmin: observacion }),
             });
 
@@ -110,7 +113,7 @@ function AdminPendientesPage(props: AdminPendientesPageProps) {
             </p>
 
             {cargando ? (
-                <Cargando />
+                <LoadingBlock />
             ) : (
                 <div className="row g-4">
                     <div className="col-lg-5">
