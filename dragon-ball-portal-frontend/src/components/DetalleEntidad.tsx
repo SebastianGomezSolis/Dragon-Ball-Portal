@@ -1,5 +1,3 @@
-// Componente para mostrar el detalle de una entidad específica.
-// Versión alternativa de DetailCard con estructura más simple y fija.
 import React from 'react';
 
 interface Item {

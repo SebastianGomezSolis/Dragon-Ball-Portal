@@ -6,8 +6,6 @@ import lombok.Setter;
 
 import java.time.Instant;
 
-// Entidad JPA que representa una contribución al portal.
-// Mapeada a la tabla "contribucion" en la base de datos.
 @Entity
 @Table(name = "contribucion")
 @Getter

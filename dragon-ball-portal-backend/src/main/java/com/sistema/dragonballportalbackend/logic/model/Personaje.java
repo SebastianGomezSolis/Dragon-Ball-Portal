@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-// Entidad JPA que representa un personaje en el sistema.
-// Mapeada a la tabla "personaje" en la base de datos.
 @Entity
 @Table(name = "personaje")
 @Getter

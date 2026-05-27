@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-// Entidad JPA que representa una raza en el sistema.
-// Mapeada a la tabla "raza" en la base de datos.
 @Entity
 @Table(name = "raza")
 @Getter

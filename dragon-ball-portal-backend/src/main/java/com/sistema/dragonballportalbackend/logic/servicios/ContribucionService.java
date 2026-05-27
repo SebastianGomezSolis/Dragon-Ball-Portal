@@ -9,9 +9,6 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-// Servicio de negocio para gestionar las contribuciones de usuarios.
-// Maneja la creación, revisión y aprobación/rechazo de contribuciones.
-// Cada contribución puede crear una entidad (Personaje, Saga o Raza) tras ser aprobada.
 @Service
 public class ContribucionService {
 
